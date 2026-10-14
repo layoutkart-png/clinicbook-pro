@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClinicBook Pro — Theme Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cbp-blue:#0E8AFD; --cbp-teal:#0DCEA9; --cbp-navy:#1a2b4a;
+  --cbp-muted:#5b6b82; --cbp-bg:#f4f8ff; --cbp-card:#ffffff;
+  --cbp-grad:linear-gradient(135deg,#0E8AFD 0%,#0DCEA9 100%);
+  --cbp-shadow:0 8px 28px rgba(14,138,253,.10);
+  --cbp-radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--cbp-navy);background:#fff;line-height:1.6}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+img,svg{max-width:100%}
+/* ===== Preview tab switcher ===== */
+.preview-bar{position:sticky;top:0;z-index:200;background:var(--cbp-navy);color:#fff;padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.preview-bar .container{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.preview-bar .plabel{font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:.75;margin-right:6px}
+.ptab{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:9px 20px;border-radius:999px;cursor:pointer;font-weight:700;font-size:14px;font-family:inherit;transition:.2s}
+.ptab:hover{background:rgba(255,255,255,.22)}
+.ptab.active{background:var(--cbp-grad);border-color:transparent}
+.view{display:none}.view.active{display:block}
+/* ===== Buttons / common ===== */
+.btn{display:inline-block;padding:13px 30px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;border:none;text-decoration:none;transition:.2s;font-family:inherit}
+.btn-primary{background:var(--cbp-grad);color:#fff;box-shadow:0 6px 18px rgba(14,138,253,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,138,253,.45)}
+.btn-outline{background:#fff;color:var(--cbp-blue);border:2px solid var(--cbp-blue)}
+.btn-outline:hover{background:var(--cbp-blue);color:#fff}
+.btn-dark{background:var(--cbp-navy);color:#fff}
+.btn-sm{padding:10px 22px;font-size:14px}
+.eyebrow{display:inline-block;background:#e3f2ff;color:var(--cbp-blue);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:7px 18px;border-radius:999px;margin-bottom:14px}
+.section{padding:76px 0}
+.section-alt{background:var(--cbp-bg)}
+.section-title{font-size:34px;font-weight:800;text-align:center;margin-bottom:10px}
+.section-sub{text-align:center;color:var(--cbp-muted);max-width:640px;margin:0 auto 40px;font-size:16px}
+/* ===== Header ===== */
+.site-header{position:sticky;top:52px;z-index:150;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--cbp-navy);text-decoration:none}
+.logo .mark{width:38px;height:38px;border-radius:12px;background:var(--cbp-grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px}
+.main-nav{display:flex;gap:28px;align-items:center}
+.main-nav a{color:var(--cbp-navy);text-decoration:none;font-weight:600;font-size:15px}
+.main-nav a:hover{color:var(--cbp-blue)}
+.header-actions{display:flex;gap:12px;align-items:center}
+.hamburger{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:var(--cbp-navy)}
+/* ===== Hero ===== */
+.hero{background:linear-gradient(180deg,#eaf4ff 0%,#fff 100%);padding:70px 0 60px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:46px;line-height:1.18;font-weight:800;margin-bottom:16px}
+.hero h1 .hl{background:var(--cbp-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:var(--cbp-muted);font-size:17px;margin-bottom:28px;max-width:480px}
+.search-card{background:#fff;border-radius:20px;box-shadow:var(--cbp-shadow);padding:10px;max-width:560px}
+.search-row{display:flex;gap:10px}
+.search-row input,.search-row select{flex:1;border:2px solid #e6eefb;border-radius:12px;padding:13px 16px;font-size:15px;font-family:inherit;color:var(--cbp-navy);background:#f8fbff;min-width:0}
+.search-row input:focus,.search-row select:focus{outline:none;border-color:var(--cbp-blue)}
+.hero-stats{display:flex;gap:34px;margin-top:30px;flex-wrap:wrap}
+.hero-stats div b{font-size:26px;display:block;background:var(--cbp-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-stats div span{color:var(--cbp-muted);font-size:14px;font-weight:600}
+.hero-art{display:flex;justify-content:center}
+/* ===== Service tiles ===== */
+.tiles{display:grid;grid-template-columns:repeat(7,1fr);gap:14px}
+.tile{background:var(--cbp-card);border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);padding:22px 10px;text-align:center;transition:.2s;cursor:pointer}
+.tile:hover{transform:translateY(-6px)}
+.tile .tico{width:52px;height:52px;margin:0 auto 12px;border-radius:16px;background:linear-gradient(135deg,#e3f2ff,#d8f7ef);display:flex;align-items:center;justify-content:center}
+.tile h3{font-size:13.5px;font-weight:700;line-height:1.35}
+/* ===== Specialities ===== */
+.spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.spec-card{background:#fff;border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);padding:30px 18px;text-align:center;text-decoration:none;color:var(--cbp-navy);transition:.2s;display:block}
+.spec-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(14,138,253,.16)}
+.spec-ico{width:64px;height:64px;margin:0 auto 14px;border-radius:20px;background:var(--cbp-grad);display:flex;align-items:center;justify-content:center}
+.spec-card h3{font-size:17px;margin-bottom:4px}
+.spec-card .count{color:var(--cbp-muted);font-size:13.5px;font-weight:600}
+/* ===== Doctor cards ===== */
+.doc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.doc-card{background:#fff;border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);overflow:hidden;transition:.2s}
+.doc-card:hover{transform:translateY(-6px)}
+.doc-photo{position:relative;background:linear-gradient(135deg,#e3f2ff,#d8f7ef);padding:26px;display:flex;justify-content:center}
+.doc-photo svg{width:120px;height:120px}
+.rating-badge{position:absolute;top:14px;right:14px;background:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:800;color:#b8860b;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.doc-body{padding:22px}
+.doc-spec-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px;flex-wrap:wrap}
+.doc-spec{background:#e3f2ff;color:var(--cbp-blue);font-size:12px;font-weight:800;padding:5px 12px;border-radius:999px}
+.avail{font-size:12.5px;font-weight:700}
+.avail.yes{color:#0a9b58}.avail.no{color:#d33}
+.doc-body h3{font-size:19px;margin-bottom:2px}
+.doc-meta{color:var(--cbp-muted);font-size:13.5px;margin:3px 0}
+.doc-fee{font-size:18px;font-weight:800;margin:10px 0 14px}
+.doc-fee small{color:var(--cbp-muted);font-weight:600;font-size:13px}
+/* ===== Steps / Why ===== */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step-card{background:#fff;border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);padding:32px 22px;text-align:center;position:relative}
+.step-num{width:52px;height:52px;border-radius:50%;background:var(--cbp-grad);color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.step-card h3{margin-bottom:8px;font-size:17px}
+.step-card p{color:var(--cbp-muted);font-size:14px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.why-card{background:#fff;border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);padding:34px 28px}
+.why-card h3{font-size:19px;margin-bottom:10px}
+.why-card p{color:var(--cbp-muted);font-size:15px}
+/* ===== Counters ===== */
+.counters{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.counters b{font-size:44px;font-weight:800;background:var(--cbp-grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
+.counters span{color:var(--cbp-muted);font-weight:600}
+/* ===== Testimonials ===== */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi{background:#fff;border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);padding:30px 26px}
+.testi .stars{color:#f5a623;font-size:18px;margin-bottom:12px;letter-spacing:2px}
+.testi p{font-size:15px;color:var(--cbp-navy);margin-bottom:16px;font-style:italic}
+.testi .who{display:flex;align-items:center;gap:12px;font-weight:700;font-size:14px}
+.testi .who svg{width:44px;height:44px}
+/* ===== FAQ ===== */
+.faq{max-width:760px;margin:0 auto}
+.accordion{background:#fff;border-radius:14px;box-shadow:var(--cbp-shadow);margin-bottom:12px;overflow:hidden}
+.accordion-head{width:100%;background:none;border:none;padding:18px 22px;font-size:16px;font-weight:700;color:var(--cbp-navy);display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:inherit;text-align:left}
+.accordion-head span{font-size:22px;color:var(--cbp-blue);transition:.2s}
+.accordion.open .accordion-head span{transform:rotate(45deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.accordion-body p{padding:0 22px 20px;color:var(--cbp-muted);font-size:15px}
+/* ===== App CTA ===== */
+.app-cta{background:linear-gradient(135deg,#1a2b4a,#0E8AFD);border-radius:26px;color:#fff;padding:56px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.app-cta h2{font-size:30px;margin-bottom:10px}
+.app-cta p{opacity:.85;margin-bottom:22px}
+.store-btns{display:flex;gap:12px;flex-wrap:wrap}
+.store-btn{background:#fff;color:var(--cbp-navy);border-radius:12px;padding:12px 22px;font-weight:800;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+/* ===== Blog ===== */
+.blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.blog-card{background:#fff;border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);overflow:hidden}
+.blog-thumb{height:150px;background:linear-gradient(135deg,#e3f2ff,#d8f7ef);display:flex;align-items:center;justify-content:center}
+.blog-body{padding:20px}
+.blog-body .bcat{font-size:12px;font-weight:800;color:var(--cbp-teal);text-transform:uppercase;letter-spacing:1px}
+.blog-body h3{font-size:16px;margin:8px 0;line-height:1.4}
+.blog-body p{color:var(--cbp-muted);font-size:13.5px}
+/* ===== Footer ===== */
+.site-footer{background:var(--cbp-navy);color:#c6d2e4;padding:64px 0 0;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:44px}
+.site-footer h4{color:#fff;font-size:16px;margin-bottom:16px}
+.site-footer a{color:#c6d2e4;text-decoration:none;font-size:14.5px;display:block;margin-bottom:10px}
+.site-footer a:hover{color:#fff}
+.site-footer p{font-size:14.5px;margin-bottom:10px}
+.newsletter{display:flex;margin-top:14px}
+.newsletter input{flex:1;border:none;border-radius:10px 0 0 10px;padding:12px 14px;font-family:inherit;min-width:0}
+.newsletter button{border:none;background:var(--cbp-grad);color:#fff;font-weight:800;padding:0 20px;border-radius:0 10px 10px 0;cursor:pointer;font-family:inherit}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0;text-align:center;font-size:13.5px;color:#93a3bd}
+/* ===== Listing page ===== */
+.page-hero{background:linear-gradient(135deg,#eaf4ff,#e6fbf4);padding:52px 0;text-align:center}
+.page-hero h1{font-size:36px;margin-bottom:6px}
+.breadcrumb{font-size:14px;color:var(--cbp-muted);margin-bottom:8px}
+.breadcrumb a{color:var(--cbp-blue);text-decoration:none}
+.listing-layout{display:grid;grid-template-columns:280px 1fr;gap:30px;align-items:start}
+.filters{background:#fff;border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);padding:26px;position:sticky;top:130px}
+.filters h3{margin-bottom:18px;font-size:18px}
+.filters .field{margin-bottom:16px}
+.filters label{display:block;font-weight:700;font-size:13.5px;margin-bottom:6px}
+.filters input,.filters select{width:100%;border:2px solid #e6eefb;border-radius:10px;padding:11px 13px;font-family:inherit;font-size:14.5px;background:#f8fbff}
+.list-card{background:#fff;border-radius:var(--cbp-radius);box-shadow:var(--cbp-shadow);padding:24px;display:flex;gap:22px;margin-bottom:18px;align-items:center}
+.list-card .doc-photo{border-radius:14px;padding:16px;flex-shrink:0}
+.list-card .doc-photo svg{width:96px;height:96px}
+.list-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+/* ===== Profile page ===== */
+.profile-card{background:#fff;border-radius:22px;box-shadow:var(--cbp-shadow);padding:34px;display:grid;grid-template-columns:150px 1fr 260px;gap:30px;align-items:start;margin-bottom:26px}
+.profile-photo svg{width:150px;height:150px}
+.verified{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--cbp-grad);color:#fff;font-size:14px;align-items:center;justify-content:center;vertical-align:middle;margin-left:6px}
+.tag{display:inline-block;background:#eef4ff;color:var(--cbp-navy);font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:999px;margin:0 6px 8px 0}
+.profile-side{background:var(--cbp-bg);border-radius:16px;padding:22px}
+.stat-row{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px dashed #dbe4f2;font-size:14.5px}
+.stat-row:last-of-type{border:none}
+.tabs{display:flex;gap:8px;margin-bottom:0;border-bottom:2px solid #e6eefb}
+.tab-btn{background:none;border:none;padding:14px 26px;font-weight:700;font-size:16px;color:var(--cbp-muted);cursor:pointer;font-family:inherit;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tab-btn.active{color:var(--cbp-blue);border-bottom-color:var(--cbp-blue)}
+.tab-panel{display:none;padding:30px 0}
+.tab-panel.active{display:block}
+.tab-panel h3{font-size:20px;margin-bottom:12px}
+.tab-panel p{color:var(--cbp-muted);margin-bottom:10px}
+.edu-item{background:#fff;border-radius:14px;box-shadow:var(--cbp-shadow);padding:18px 22px;margin-bottom:12px}
+.edu-item b{display:block;font-size:15.5px}
+.edu-item span{color:var(--cbp-muted);font-size:14px}
+.dist-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:14px}
+.dist-row .bar{flex:1;height:10px;background:#e6eefb;border-radius:99px;overflow:hidden}
+.dist-row .bar i{display:block;height:100%;background:linear-gradient(90deg,#f5a623,#f7c948);border-radius:99px}
+.review-card{background:#fff;border-radius:14px;box-shadow:var(--cbp-shadow);padding:22px;margin-bottom:14px}
+.review-card .who{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-weight:700}
+.review-card .who svg{width:42px;height:42px}
+/* ===== Booking wizard ===== */
+.wiz-wrap{max-width:860px;margin:0 auto}
+.wiz-steps{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;margin:0 0 36px}
+.wiz-step{display:flex;align-items:center;gap:10px;padding:10px 14px;font-weight:700;font-size:14.5px;color:var(--cbp-muted)}
+.wiz-step .n{width:34px;height:34px;border-radius:50%;background:#e6eefb;color:var(--cbp-muted);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+.wiz-step.active{color:var(--cbp-navy)}
+.wiz-step.active .n{background:var(--cbp-grad);color:#fff}
+.wiz-step.done .n{background:#0DCEA9;color:#fff}
+.wiz-sep{width:40px;height:2px;background:#e6eefb}
+.wiz-panel{background:#fff;border-radius:22px;box-shadow:var(--cbp-shadow);padding:36px;display:none}
+.wiz-panel.active{display:block}
+.doc-sum{display:flex;gap:18px;align-items:center;background:var(--cbp-bg);border-radius:16px;padding:18px;margin-bottom:22px}
+.doc-sum svg{width:72px;height:72px;flex-shrink:0}
+.form-field{margin-bottom:16px}
+.form-field label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.form-field input,.form-field select,.form-field textarea{width:100%;border:2px solid #e6eefb;border-radius:10px;padding:12px 14px;font-family:inherit;font-size:15px;background:#f8fbff;color:var(--cbp-navy)}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--cbp-blue)}
+.date-strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px}
+.date-chip{flex:0 0 auto;width:80px;border:2px solid #e6eefb;border-radius:14px;padding:10px 6px;text-align:center;cursor:pointer;background:#fff;font-family:inherit}
+.date-chip b{display:block;font-size:18px}
+.date-chip span{font-size:12px;color:var(--cbp-muted);font-weight:700}
+.date-chip.sel{border-color:var(--cbp-blue);background:#eaf4ff}
+.slot-label{font-weight:800;margin:18px 0 10px;font-size:15px}
+.slot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.slot{border:2px solid #e6eefb;border-radius:10px;padding:11px 6px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;background:#fff;font-family:inherit;color:var(--cbp-navy)}
+.slot:hover{border-color:var(--cbp-blue)}
+.slot.sel{background:var(--cbp-grad);color:#fff;border-color:transparent}
+.slot.booked{background:#f1f4f9;color:#aab4c5;cursor:not-allowed;text-decoration:line-through}
+.wiz-nav{display:flex;justify-content:space-between;margin-top:28px;gap:12px;flex-wrap:wrap}
+.success-box{text-align:center;padding:16px 0}
+.success-ico{width:84px;height:84px;border-radius:50%;background:#0DCEA9;color:#fff;font-size:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.apt-id{display:inline-block;background:#eaf4ff;color:var(--cbp-blue);font-weight:800;padding:8px 22px;border-radius:999px;margin:12px 0;font-size:17px}
+.wa-btn{background:#25D366;color:#fff;box-shadow:0 6px 18px rgba(37,211,102,.35);text-decoration:none}
+.wa-btn:hover{transform:translateY(-2px)}
+.err{color:#d33;font-size:13.5px;font-weight:600;margin-top:10px;display:none}
+/* ===== Auth split ===== */
+.split-layout{display:grid;grid-template-columns:1fr 1fr;border-radius:24px;overflow:hidden;box-shadow:var(--cbp-shadow);max-width:980px;margin:0 auto;background:#fff}
+.split-left{background:linear-gradient(135deg,#0E8AFD,#0DCEA9);color:#fff;padding:56px 44px;display:flex;flex-direction:column;justify-content:center}
+.split-left h2{font-size:30px;margin-bottom:12px}
+.split-left p{opacity:.92;margin-bottom:24px}
+.split-left .lstats{display:flex;gap:30px}
+.split-left .lstats b{font-size:24px}
+.split-left .lstats span{font-size:13px;opacity:.85}
+.split-right{padding:48px 44px}
+.auth-tabs{display:flex;gap:8px;margin-bottom:26px;background:var(--cbp-bg);border-radius:999px;padding:6px}
+.auth-tab{flex:1;border:none;background:none;padding:12px;border-radius:999px;font-weight:800;font-size:15px;color:var(--cbp-muted);cursor:pointer;font-family:inherit}
+.auth-tab.active{background:#fff;color:var(--cbp-navy);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.auth-form{display:none}
+.auth-form.active{display:block}
+.demo-hint{background:#fff8e6;border:1px dashed #e0a800;border-radius:12px;padding:14px 16px;margin-top:20px;font-size:13.5px;line-height:1.9}
+.demo-hint b{color:#8a6d00}
+/* ===== Dashboards ===== */
+.dash-layout{display:grid;grid-template-columns:240px 1fr;max-width:1180px;margin:0 auto;background:#fff;border-radius:22px;box-shadow:var(--cbp-shadow);overflow:hidden;min-height:660px}
+.dash-side{background:var(--cbp-navy);color:#c6d2e4;padding:26px 0}
+.dash-user{padding:0 24px 20px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.dash-user svg{width:52px;height:52px;flex-shrink:0}
+.dash-user b{color:#fff;display:block;font-size:15px}
+.dash-user span{font-size:12.5px}
+.dash-nav a{display:flex;gap:12px;align-items:center;color:#c6d2e4;text-decoration:none;padding:13px 24px;font-weight:600;font-size:14.5px;border-left:3px solid transparent}
+.dash-nav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.dash-nav a.active{background:rgba(255,255,255,.08);color:#fff;border-left-color:var(--cbp-teal)}
+.dash-main{padding:34px;background:var(--cbp-bg);min-width:0}
+.dash-main h2{font-size:24px;margin-bottom:4px}
+.dash-sub{color:var(--cbp-muted);margin-bottom:24px;font-size:14.5px}
+.stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px}
+.stat-card{background:#fff;border-radius:16px;box-shadow:var(--cbp-shadow);padding:22px}
+.stat-card .sico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+.stat-card b{font-size:26px;display:block}
+.stat-card span{color:var(--cbp-muted);font-size:13.5px;font-weight:600}
+.panel{background:#fff;border-radius:16px;box-shadow:var(--cbp-shadow);padding:24px;margin-bottom:20px}
+.panel h3{font-size:17px;margin-bottom:16px}
+.dtable{width:100%;border-collapse:collapse;font-size:14px}
+.dtable th{text-align:left;padding:10px 12px;color:var(--cbp-muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #eef2f8;white-space:nowrap}
+.dtable td{padding:13px 12px;border-bottom:1px solid #eef2f8;vertical-align:middle}
+.dtable tr:last-child td{border:none}
+.st{display:inline-block;padding:5px 14px;border-radius:999px;font-size:12.5px;font-weight:800;white-space:nowrap}
+.st-confirmed{background:#dcf7e8;color:#0a9b58}
+.st-pending{background:#fff3d6;color:#b8860b}
+.st-cancelled{background:#ffe3e3;color:#d33}
+.mini-btn{border:none;border-radius:8px;padding:8px 14px;font-weight:700;font-size:12.5px;cursor:pointer;font-family:inherit;margin:2px 6px 2px 0}
+.mini-ok{background:#dcf7e8;color:#0a9b58}
+.mini-no{background:#ffe3e3;color:#d33}
+.sched-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.sched-day{background:var(--cbp-bg);border-radius:10px;padding:10px 6px;text-align:center;font-size:11.5px;line-height:1.7}
+.sched-day b{display:block;font-size:13px;margin-bottom:2px}
+.sched-day.off{opacity:.45}
+.past-item{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid #eef2f8}
+.past-item:last-child{border:none}
+.past-item svg{width:44px;height:44px;flex-shrink:0}
+/* ===== New views responsive ===== */
+@media(max-width:900px){
+  .dash-layout{grid-template-columns:1fr}
+  .dash-side{padding:12px}
+  .dash-user{display:none}
+  .dash-nav{display:flex;overflow-x:auto;padding:0 6px}
+  .dash-nav a{border-left:none;border-bottom:3px solid transparent;white-space:nowrap;padding:10px 14px}
+  .dash-nav a.active{border-bottom-color:var(--cbp-teal)}
+  .split-layout{grid-template-columns:1fr}
+  .split-left{padding:40px 28px}
+  .split-right{padding:32px 24px}
+  .sched-grid{grid-template-columns:repeat(4,1fr)}
+  .stat-cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .slot-grid{grid-template-columns:repeat(3,1fr)}
+  .stat-cards{grid-template-columns:1fr}
+  .wiz-panel{padding:24px 18px}
+  .wiz-step{font-size:12.5px;padding:8px 8px}
+  .wiz-sep{width:18px}
+  .sched-grid{grid-template-columns:repeat(2,1fr)}
+  .dash-main{padding:20px 14px}
+  .dtable{font-size:12.5px}
+  .dtable th,.dtable td{padding:9px 8px}
+}
+@media(max-width:720px){
+  .site-header{top:150px !important}
+}
+
+/* ===== Responsive ===== */
+@media(max-width:1024px){
+  .tiles{grid-template-columns:repeat(4,1fr)}
+  .spec-grid,.doc-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .listing-layout{grid-template-columns:1fr}
+  .filters{position:static}
+  .profile-card{grid-template-columns:1fr;text-align:center}
+  .profile-photo{display:flex;justify-content:center}
+}
+@media(max-width:720px){
+  .main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:0 10px 24px rgba(0,0,0,.1);gap:16px;align-items:flex-start}
+  .main-nav.open{display:flex}
+  .hamburger{display:block}
+  .header-actions .btn{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .hero h1{font-size:32px}
+  .search-row{flex-direction:column}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .spec-grid,.doc-grid,.blog-grid,.steps,.why-grid,.testi-grid,.counters{grid-template-columns:1fr}
+  .counters{grid-template-columns:repeat(2,1fr)}
+  .section-title{font-size:26px}
+  .app-cta{padding:36px 26px}
+  .footer-grid{grid-template-columns:1fr}
+  .list-card{flex-direction:column;text-align:center}
+  .list-actions{justify-content:center}
+  .site-header{top:96px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ PREVIEW TAB SWITCHER ============ -->
+<div class="preview-bar">
+  <div class="container">
+    <span class="plabel">ClinicBook Pro Preview:</span>
+    <button class="ptab active" data-view="view-home">🏠 Homepage</button>
+    <button class="ptab" data-view="view-doctors">🩺 Find Doctors</button>
+    <button class="ptab" data-view="view-profile">👨‍⚕️ Doctor Profile</button>
+    <button class="ptab" data-view="view-booking">📅 Booking</button>
+    <button class="ptab" data-view="view-login">🔐 Login</button>
+    <button class="ptab" data-view="view-patient">🙋 Patient Dashboard</button>
+    <button class="ptab" data-view="view-doctor">🧑‍⚕️ Doctor Dashboard</button>
+  </div>
+</div>
+
+<!-- ============ VIEW 1: HOMEPAGE ============ -->
+<div class="view active" id="view-home">
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="#"><span class="mark">✚</span> ClinicBook <span style="background:var(--cbp-grad);-webkit-background-clip:text;background-clip:text;color:transparent">Pro</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#">Home</a><a href="#">Doctors</a><a href="#">Specialities</a><a href="#">Blog</a><a href="#">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline btn-sm" href="#">Login</a>
+      <a class="btn btn-dark btn-sm" href="#">Register</a>
+      <button class="hamburger" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Apne <span class="hl">Bharosemand Doctor</span> Dhoondhein, Aaj Hi</h1>
+      <p class="sub">Verified doctors, turant slot booking aur WhatsApp confirmation — sehat ka khayal, ab bilkul aasaan.</p>
+      <form class="search-card" onsubmit="return false">
+        <div class="search-row">
+          <input type="search" placeholder="Doctor, clinic ya speciality khojein…">
+          <select>
+            <option>All Specialities</option><option>Cardiology</option><option>Dermatology</option><option>Orthopedic</option><option>Pediatrics</option><option>Dental</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+      </form>
+      <div class="hero-stats">
+        <div><b>500+</b><span>Verified Doctors</span></div>
+        <div><b>50K+</b><span>Appointments</span></div>
+        <div><b>4.8★</b><span>Patient Rating</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg width="380" height="380" viewBox="0 0 380 380" role="img" aria-label="Doctor illustration">
+        <circle cx="190" cy="190" r="170" fill="#dbeeff"/>
+        <circle cx="190" cy="190" r="130" fill="#c2e2ff"/>
+        <rect x="150" y="120" width="80" height="150" rx="36" fill="#ffffff"/>
+        <circle cx="190" cy="105" r="34" fill="#b57a4e"/>
+        <path d="M158 100 q32 -34 64 0 q-6 -30 -32 -30 q-26 0 -32 30" fill="#1f1a17"/>
+        <circle cx="60" cy="20" r="0" fill="none"/>
+        <circle cx="190" cy="96" r="3" fill="#c81e3a"/>
+        <rect x="172" y="140" width="36" height="60" rx="8" fill="#0E8AFD" opacity="0.9"/>
+        <circle cx="150" cy="200" r="10" fill="#0DCEA9"/><circle cx="230" cy="200" r="10" fill="#0DCEA9"/>
+        <rect x="120" y="270" width="140" height="14" rx="7" fill="#0E8AFD" opacity="0.25"/>
+        <rect x="140" y="292" width="100" height="14" rx="7" fill="#0DCEA9" opacity="0.35"/>
+        <rect x="286" y="96" width="70" height="46" rx="12" fill="#ffffff" stroke="#0E8AFD" stroke-width="2"/>
+        <circle cx="300" cy="112" r="6" fill="#0DCEA9"/><rect x="312" y="108" width="32" height="8" rx="4" fill="#0E8AFD" opacity=".4"/>
+        <rect x="24" y="220" width="70" height="46" rx="12" fill="#ffffff" stroke="#0DCEA9" stroke-width="2"/>
+        <circle cx="38" cy="236" r="6" fill="#0E8AFD"/><rect x="50" y="232" width="32" height="8" rx="4" fill="#0DCEA9" opacity=".4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE TILES -->
+<section class="section" style="padding-top:56px">
+  <div class="container">
+    <div class="tiles">
+      <div class="tile"><div class="tico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E8AFD" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div><h3>Book Appointment</h3></div>
+      <div class="tile"><div class="tico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0DCEA9" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Find Doctors</h3></div>
+      <div class="tile"><div class="tico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E8AFD" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h3>Hospitals &amp; Clinics</h3></div>
+      <div class="tile"><div class="tico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0DCEA9" stroke-width="2"><path d="M12 21s-7-4.5-7-11a7 7 0 0114 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Healthcare</h3></div>
+      <div class="tile"><div class="tico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E8AFD" stroke-width="2"><path d="M8 3h8l1 5H7l1-5zM7 8h10v4a5 5 0 01-10 0V8zM12 17v4"/></svg></div><h3>Medicines</h3></div>
+      <div class="tile"><div class="tico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0DCEA9" stroke-width="2"><path d="M9 3h6M10 3v6l-5 9a2.4 2.4 0 002 3.6h10a2.4 2.4 0 002-3.6l-5-9V3"/></svg></div><h3>Lab Tests</h3></div>
+      <div class="tile"><div class="tico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E8AFD" stroke-width="2"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg></div><h3>Home Care</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALITIES -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="text-align:center"><span class="eyebrow">Specialities</span></div>
+    <h2 class="section-title">Browse by Speciality</h2>
+    <p class="section-sub">Dil se lekar twacha tak — har samasya ke liye sahi specialist.</p>
+    <div class="spec-grid">
+      <a class="spec-card" href="#"><div class="spec-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.7-7.5-11A4.5 4.5 0 0112 6a4.5 4.5 0 017.5 4c0 6.3-7.5 11-7.5 11z"/></svg></div><h3>Cardiology</h3><span class="count">120 Doctors</span></a>
+      <a class="spec-card" href="#"><div class="spec-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div><h3>Dermatology</h3><span class="count">95 Doctors</span></a>
+      <a class="spec-card" href="#"><div class="spec-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 3v7a5 5 0 0010 0V3M7 6h10M12 15v6"/></svg></div><h3>Orthopedic</h3><span class="count">110 Doctors</span></a>
+      <a class="spec-card" href="#"><div class="spec-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><h3>Pediatrics</h3><span class="count">85 Doctors</span></a>
+      <a class="spec-card" href="#"><div class="spec-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 3h6M10 3v5l-4.5 8.5A2.5 2.5 0 007.7 20h8.6a2.5 2.5 0 002.2-3.5L14 8V3"/></svg></div><h3>Neurology</h3><span class="count">60 Doctors</span></a>
+      <a class="spec-card" href="#"><div class="spec-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 3h10v6a5 5 0 01-10 0V3zM7 14v7M17 14v7M10 14v4M14 14v4"/></svg></div><h3>Dental</h3><span class="count">130 Doctors</span></a>
+      <a class="spec-card" href="#"><div class="spec-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5"/></svg></div><h3>Gynecology</h3><span class="count">75 Doctors</span></a>
+      <a class="spec-card" href="#"><div class="spec-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.5"/></svg></div><h3>Ophthalmology</h3><span class="count">55 Doctors</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED DOCTORS -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center"><span class="eyebrow">Featured Doctors</span></div>
+    <h2 class="section-title">Our Highlighted Doctors</h2>
+    <p class="section-sub">Top-rated, verified doctors — hazaaron patients ka bharosa.</p>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-photo">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0DCEA9" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#a06a42"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#b57a4e"/><path d="M38 48 Q36 24 60 22 Q84 24 82 48 Q80 36 72 34 Q74 44 70 42 Q60 32 46 38 Q40 42 38 48" fill="#1f1a17"/><circle cx="60" cy="18" r="9" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="39" cy="56" r="2.6" fill="#c9a227"/><circle cx="81" cy="56" r="2.6" fill="#c9a227"/></svg>
+          <span class="rating-badge">★ 4.9</span>
+        </div>
+        <div class="doc-body">
+          <div class="doc-spec-row"><span class="doc-spec">Cardiology</span><span class="avail yes">● Available Today</span></div>
+          <h3>Dr. Anjali Sharma</h3>
+          <p class="doc-meta">MBBS, MD · 15 yrs exp</p>
+          <p class="doc-meta">🏥 CityCare Hospital, Prayagraj</p>
+          <div class="doc-fee">₹800 <small>/ session</small></div>
+          <a class="btn btn-primary btn-sm" href="#" style="width:100%;text-align:center">Book Now</a>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0E8AFD" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#96603a"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="52" cy="52" r="2.4" fill="#191411"/><circle cx="68" cy="52" r="2.4" fill="#191411"/><path d="M50 63 Q60 59 70 63 Q64 68 60 67 Q56 68 50 63" fill="#191411"/><path d="M55 72 Q60 74 65 72" stroke="#6e4423" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          <span class="rating-badge">★ 4.8</span>
+        </div>
+        <div class="doc-body">
+          <div class="doc-spec-row"><span class="doc-spec">Orthopedic</span><span class="avail yes">● Available Today</span></div>
+          <h3>Dr. Rajesh Gupta</h3>
+          <p class="doc-meta">MBBS, MS Ortho · 12 yrs exp</p>
+          <p class="doc-meta">🏥 Sharma Clinic, Lucknow</p>
+          <div class="doc-fee">₹600 <small>/ session</small></div>
+          <a class="btn btn-primary btn-sm" href="#" style="width:100%;text-align:center">Book Now</a>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0DCEA9" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#a06a42"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#b57a4e"/><path d="M36 52 Q34 22 60 20 Q86 22 84 52 Q84 60 82 64 Q82 40 60 38 Q38 40 38 64 Q36 60 36 52" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="38" cy="58" r="2.6" fill="#c9a227"/><circle cx="82" cy="58" r="2.6" fill="#c9a227"/></svg>
+          <span class="rating-badge">★ 4.9</span>
+        </div>
+        <div class="doc-body">
+          <div class="doc-spec-row"><span class="doc-spec">Dermatology</span><span class="avail no">● On Leave</span></div>
+          <h3>Dr. Priya Patel</h3>
+          <p class="doc-meta">MBBS, MD Derm · 10 yrs exp</p>
+          <p class="doc-meta">🏥 SkinCare Clinic, Varanasi</p>
+          <div class="doc-fee">₹500 <small>/ session</small></div>
+          <a class="btn btn-primary btn-sm" href="#" style="width:100%;text-align:center">Book Now</a>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0E8AFD" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#96603a"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="46" cy="52" r="8" fill="none" stroke="#191411" stroke-width="2"/><circle cx="74" cy="52" r="8" fill="none" stroke="#191411" stroke-width="2"/><path d="M54 52 h12" stroke="#191411" stroke-width="2"/><path d="M53 66 Q60 70 67 66" stroke="#6e4423" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          <span class="rating-badge">★ 4.7</span>
+        </div>
+        <div class="doc-body">
+          <div class="doc-spec-row"><span class="doc-spec">Pediatrics</span><span class="avail yes">● Available Today</span></div>
+          <h3>Dr. Vikram Singh</h3>
+          <p class="doc-meta">MBBS, MD Pediatrics · 8 yrs exp</p>
+          <p class="doc-meta">🏥 ChildCare Hospital, Prayagraj</p>
+          <div class="doc-fee">₹400 <small>/ session</small></div>
+          <a class="btn btn-primary btn-sm" href="#" style="width:100%;text-align:center">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:34px"><a class="btn btn-outline" href="#">View All Doctors</a></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Sirf 4 aasaan steps me appointment paayein.</p>
+    <div class="steps">
+      <div class="step-card"><div class="step-num">1</div><h3>Search Karein</h3><p>Speciality ya naam se doctor dhoondhein.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h3>Slot Chunein</h3><p>Date aur time apne hisaab se select karein.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h3>Confirm Karein</h3><p>Details bharein, turant confirmation paayein.</p></div>
+      <div class="step-card"><div class="step-num">4</div><h3>Milein Doctor Se</h3><p>Clinic me milein ya video call karein.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Why Choose ClinicBook Pro</h2>
+    <p class="section-sub">Bina jhanjhat ke healthcare booking.</p>
+    <div class="why-grid">
+      <div class="why-card"><h3>✅ Verified Doctors</h3><p>Har doctor ki degree aur credentials check karke hi listing hoti hai. No fakes, no surprises.</p></div>
+      <div class="why-card"><h3>⚡ Instant Booking</h3><p>Real-time slots, turant confirmation aur WhatsApp reminders. Phone pe wait karne ka jhanjhat khatam.</p></div>
+      <div class="why-card"><h3>💰 Transparent Pricing</h3><p>Fees ₹ me pehle se saaf-saaf. Koi hidden charges nahi, kabhi nahi.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="counters">
+      <div><b data-count="500">0</b><span>Doctors</span></div>
+      <div><b data-count="30000">0</b><span>Bookings Done</span></div>
+      <div><b data-count="18">0</b><span>Specialities</span></div>
+      <div><b data-count="97">0</b><span>Hospitals &amp; Clinics</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">What Patients Say</h2>
+    <p class="section-sub">Asli patients, asli kahaniyan.</p>
+    <div class="testi-grid">
+      <div class="testi"><div class="stars">★★★★★</div><p>"Subah 9 baje cardiologist book kiya, 9:05 pe WhatsApp par confirmation. Clinic me zero waiting."</p><div class="who"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="52" cy="52" r="2.4" fill="#191411"/><circle cx="68" cy="52" r="2.4" fill="#191411"/><path d="M50 63 Q60 59 70 63 Q64 68 60 67 Q56 68 50 63" fill="#191411"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#0E8AFD"/></svg><span>Ramesh Gupta<br><small style="color:var(--cbp-muted);font-weight:500">Prayagraj</small></span></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"Maa ke liye video consultation ne 40 km ka safar bacha diya. Doctor bahut achhe the."</p><div class="who"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#b57a4e"/><path d="M36 52 Q34 22 60 20 Q86 22 84 52 Q84 62 82 66 Q82 42 60 40 Q38 42 38 66 Q36 62 36 52" fill="#1f1a17"/><circle cx="60" cy="44" r="2.6" fill="#c81e3a"/><circle cx="52" cy="54" r="2.4" fill="#1f1a17"/><circle cx="68" cy="54" r="2.4" fill="#1f1a17"/><path d="M53 64 Q60 69 67 64" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#0DCEA9"/></svg><span>Sunita Devi<br><small style="color:var(--cbp-muted);font-weight:500">Kaushambi</small></span></div></div>
+      <div class="testi"><div class="stars">★★★★☆</div><p>"Fees pehle se saaf, WhatsApp par reminder — overall bahut smooth experience."</p><div class="who"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="46" cy="52" r="8" fill="none" stroke="#191411" stroke-width="2"/><circle cx="74" cy="52" r="8" fill="none" stroke="#191411" stroke-width="2"/><path d="M54 52 h12" stroke="#191411" stroke-width="2"/><path d="M53 66 Q60 70 67 66" stroke="#6e4423" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#1a2b4a"/></svg><span>Arjun Singh<br><small style="color:var(--cbp-muted);font-weight:500">Lucknow</small></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq" style="margin-top:34px">
+      <div class="accordion"><button class="accordion-head">Kya book karne ke liye account banana zaroori hai? <span>＋</span></button><div class="accordion-body"><p>Nahi. Sirf naam aur mobile number daaliye — ek minute me booking, bina login ke.</p></div></div>
+      <div class="accordion"><button class="accordion-head">Appointment confirm kaise hogi? <span>＋</span></button><div class="accordion-body"><p>Booking ke turant baad appointment ID milegi, aur WhatsApp button se clinic se seedha confirm kar sakte hain.</p></div></div>
+      <div class="accordion"><button class="accordion-head">Kya reschedule ya cancel ho sakta hai? <span>＋</span></button><div class="accordion-body"><p>Haan — confirmation me diye gaye number par clinic ko call ya WhatsApp karein.</p></div></div>
+      <div class="accordion"><button class="accordion-head">Kya video consultation available hai? <span>＋</span></button><div class="accordion-body"><p>Video tag wale doctors online consultation dete hain. Booking ke samay Video option chunein.</p></div></div>
+      <div class="accordion"><button class="accordion-head">Kya koi booking fee hai? <span>＋</span></button><div class="accordion-body"><p>Bilkul nahi. Aap sirf doctor ki consultation fee dete hain, jo ₹ me pehle se dikhti hai.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APP CTA -->
+<section class="section">
+  <div class="container">
+    <div class="app-cta">
+      <div>
+        <h2>ClinicBook App Download Karein!</h2>
+        <p>Appointment book karein, reminders paayein, reports rakhein — sab ek app me.</p>
+        <div class="store-btns">
+          <a class="store-btn" href="#">▶ Google Play</a>
+          <a class="store-btn" href="#">🍎 App Store</a>
+        </div>
+      </div>
+      <svg width="200" height="200" viewBox="0 0 200 200"><rect x="70" y="20" width="60" height="160" rx="18" fill="#fff" opacity=".95"/><rect x="80" y="40" width="40" height="8" rx="4" fill="#0E8AFD" opacity=".5"/><circle cx="100" cy="90" r="22" fill="#dbeeff"/><ellipse cx="100" cy="88" rx="12" ry="13" fill="#b57a4e"/><path d="M88 84 Q88 72 100 71 Q112 72 112 84 Q108 76 100 76 Q92 76 88 84" fill="#1f1a17"/><rect x="78" y="120" width="44" height="8" rx="4" fill="#0DCEA9" opacity=".6"/><rect x="86" y="134" width="28" height="8" rx="4" fill="#0E8AFD" opacity=".4"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Health Blog</h2>
+    <p class="section-sub">Hamare doctors se sehat ke tips.</p>
+    <div class="blog-grid">
+      <div class="blog-card"><div class="blog-thumb"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0E8AFD" stroke-width="1.6"><path d="M12 21s-7.5-4.7-7.5-11A4.5 4.5 0 0112 6a4.5 4.5 0 017.5 4c0 6.3-7.5 11-7.5 11z"/></svg></div><div class="blog-body"><span class="bcat">Heart</span><h3>Monsoon me Dil ka Khayal: 7 Zaroori Tips</h3><p>Dr. Anjali Sharma batati hain barsaat me heart patients ke liye savdhaniyan…</p></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0DCEA9" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div><div class="blog-body"><span class="bcat">Skin</span><h3>Garmiyon me Twacha ki Dekhbhal kaise Karein</h3><p>Dr. Priya Patel se jaaniye sunscreen aur hydration ke sahi niyam…</p></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0E8AFD" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="blog-body"><span class="bcat">Child Care</span><h3>Bachchon ka Vaccination Schedule: Poori Guide</h3><p>Dr. Vikram Singh samjhate hain kaunsa teeka kab lagwana hai…</p></div></div>
+      <div class="blog-card"><div class="blog-thumb"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0DCEA9" stroke-width="1.6"><path d="M7 3v7a5 5 0 0010 0V3M7 6h10M12 15v6"/></svg></div><div class="blog-body"><span class="bcat">Bones</span><h3>Kamar Dard se Chhutkara: Roz ke 5 Aasaan Vyayam</h3><p>Dr. Rajesh Gupta ke bataye simple exercises jo ghar par karein…</p></div></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /view-home -->
+
+<!-- ============ VIEW 2: FIND DOCTORS ============ -->
+<div class="view" id="view-doctors">
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="#">Home</a> / Find Doctors</div>
+    <h1>Find Doctors</h1>
+    <p style="color:var(--cbp-muted)">4 doctors available</p>
+  </div>
+</div>
+<section class="section">
+  <div class="container listing-layout">
+    <aside class="filters">
+      <h3>Filter Doctors</h3>
+      <form onsubmit="return false">
+        <div class="field"><label>Search</label><input type="search" placeholder="Name or clinic…"></div>
+        <div class="field"><label>Specialization</label><select><option>All Specialities</option><option>Cardiology</option><option>Dermatology</option><option>Orthopedic</option><option>Pediatrics</option><option>Dental</option></select></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Search</button>
+      </form>
+    </aside>
+    <div>
+      <div class="listing-grid">
+        <article class="list-card">
+          <div class="doc-photo"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0DCEA9" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#a06a42"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#b57a4e"/><path d="M38 48 Q36 24 60 22 Q84 24 82 48 Q80 36 72 34 Q74 44 70 42 Q60 32 46 38 Q40 42 38 48" fill="#1f1a17"/><circle cx="60" cy="18" r="9" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="39" cy="56" r="2.6" fill="#c9a227"/><circle cx="81" cy="56" r="2.6" fill="#c9a227"/></svg><span class="rating-badge">★ 4.9</span></div>
+          <div style="flex:1;min-width:0">
+            <div class="doc-spec-row"><span class="doc-spec">Cardiology</span><span class="avail yes">● Available Today</span></div>
+            <h3>Dr. Anjali Sharma</h3>
+            <p class="doc-meta">MBBS, MD · 15 yrs exp</p>
+            <p class="doc-meta">🗓 Mon, Tue, Thu, Sat</p>
+            <p class="doc-meta">🏥 CityCare Hospital, Prayagraj</p>
+            <p class="doc-meta"><b style="color:var(--cbp-navy)">₹800</b> · 📞 +91 98765 43210</p>
+            <div class="list-actions"><a class="btn btn-outline btn-sm" href="#">View Profile</a><a class="btn btn-primary btn-sm" href="#">Book Appointment</a></div>
+          </div>
+        </article>
+        <article class="list-card">
+          <div class="doc-photo"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0E8AFD" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#96603a"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="52" cy="52" r="2.4" fill="#191411"/><circle cx="68" cy="52" r="2.4" fill="#191411"/><path d="M50 63 Q60 59 70 63 Q64 68 60 67 Q56 68 50 63" fill="#191411"/><path d="M55 72 Q60 74 65 72" stroke="#6e4423" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span class="rating-badge">★ 4.8</span></div>
+          <div style="flex:1;min-width:0">
+            <div class="doc-spec-row"><span class="doc-spec">Orthopedic</span><span class="avail yes">● Available Today</span></div>
+            <h3>Dr. Rajesh Gupta</h3>
+            <p class="doc-meta">MBBS, MS Ortho · 12 yrs exp</p>
+            <p class="doc-meta">🗓 Mon – Fri</p>
+            <p class="doc-meta">🏥 Sharma Clinic, Lucknow</p>
+            <p class="doc-meta"><b style="color:var(--cbp-navy)">₹600</b> · 📞 +91 98765 12340</p>
+            <div class="list-actions"><a class="btn btn-outline btn-sm" href="#">View Profile</a><a class="btn btn-primary btn-sm" href="#">Book Appointment</a></div>
+          </div>
+        </article>
+        <article class="list-card">
+          <div class="doc-photo"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0DCEA9" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#a06a42"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#b57a4e"/><path d="M36 52 Q34 22 60 20 Q86 22 84 52 Q84 60 82 64 Q82 40 60 38 Q38 40 38 64 Q36 60 36 52" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="38" cy="58" r="2.6" fill="#c9a227"/><circle cx="82" cy="58" r="2.6" fill="#c9a227"/></svg><span class="rating-badge">★ 4.9</span></div>
+          <div style="flex:1;min-width:0">
+            <div class="doc-spec-row"><span class="doc-spec">Dermatology</span><span class="avail no">● On Leave</span></div>
+            <h3>Dr. Priya Patel</h3>
+            <p class="doc-meta">MBBS, MD Derm · 10 yrs exp</p>
+            <p class="doc-meta">🗓 Tue, Wed, Fri, Sun</p>
+            <p class="doc-meta">🏥 SkinCare Clinic, Varanasi</p>
+            <p class="doc-meta"><b style="color:var(--cbp-navy)">₹500</b> · 📞 +91 91234 56780</p>
+            <div class="list-actions"><a class="btn btn-outline btn-sm" href="#">View Profile</a><a class="btn btn-primary btn-sm" href="#">Book Appointment</a></div>
+          </div>
+        </article>
+        <article class="list-card">
+          <div class="doc-photo"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0E8AFD" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#96603a"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="46" cy="52" r="8" fill="none" stroke="#191411" stroke-width="2"/><circle cx="74" cy="52" r="8" fill="none" stroke="#191411" stroke-width="2"/><path d="M54 52 h12" stroke="#191411" stroke-width="2"/><path d="M53 66 Q60 70 67 66" stroke="#6e4423" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span class="rating-badge">★ 4.7</span></div>
+          <div style="flex:1;min-width:0">
+            <div class="doc-spec-row"><span class="doc-spec">Pediatrics</span><span class="avail yes">● Available Today</span></div>
+            <h3>Dr. Vikram Singh</h3>
+            <p class="doc-meta">MBBS, MD Pediatrics · 8 yrs exp</p>
+            <p class="doc-meta">🗓 Mon, Wed, Sat</p>
+            <p class="doc-meta">🏥 ChildCare Hospital, Prayagraj</p>
+            <p class="doc-meta"><b style="color:var(--cbp-navy)">₹400</b> · 📞 +91 99887 66554</p>
+            <div class="list-actions"><a class="btn btn-outline btn-sm" href="#">View Profile</a><a class="btn btn-primary btn-sm" href="#">Book Appointment</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /view-doctors -->
+
+<!-- ============ VIEW 3: DOCTOR PROFILE ============ -->
+<div class="view" id="view-profile">
+<section class="section" style="padding-top:44px">
+  <div class="container">
+    <div class="profile-card">
+      <div class="profile-photo">
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0DCEA9" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#a06a42"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#b57a4e"/><path d="M38 48 Q36 24 60 22 Q84 24 82 48 Q80 36 72 34 Q74 44 70 42 Q60 32 46 38 Q40 42 38 48" fill="#1f1a17"/><circle cx="60" cy="18" r="9" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="39" cy="56" r="2.6" fill="#c9a227"/><circle cx="81" cy="56" r="2.6" fill="#c9a227"/></svg>
+      </div>
+      <div class="profile-main">
+        <h1 style="font-size:30px">Dr. Anjali Sharma <span class="verified">✔</span></h1>
+        <p style="color:var(--cbp-muted);margin:4px 0">MBBS, MD — Cardiology</p>
+        <div style="color:#f5a623;letter-spacing:2px;margin:6px 0">★★★★★ <span style="color:var(--cbp-muted);font-size:13px;letter-spacing:0">4.9 (210 votes)</span></div>
+        <div style="margin:10px 0">
+          <span class="tag">Cardiology</span><span class="tag">📹 Video Consult</span><span class="tag">🏥 In-Person</span>
+        </div>
+        <p class="doc-meta">🏥 CityCare Hospital, Prayagraj</p>
+        <p class="doc-meta">📍 Civil Lines, Prayagraj, Uttar Pradesh</p>
+        <div style="margin:12px 0">
+          <span class="tag">Hindi</span><span class="tag">English</span><span class="tag">ECG</span><span class="tag">Echo</span><span class="tag">Angiography</span>
+        </div>
+        <a class="btn btn-outline btn-sm" href="#">Add Feedback</a>
+      </div>
+      <div class="profile-side">
+        <div class="stat-row">👍 <b>210</b>&nbsp;Votes</div>
+        <div class="stat-row">💬 <b>86</b>&nbsp;Feedback</div>
+        <div class="stat-row">🧑‍⚕️ <b>12,000+</b>&nbsp;Patients Treated</div>
+        <div class="stat-row">💰 <b>₹800</b></div>
+        <div class="stat-row">📞 <b>+91 98765 43210</b></div>
+        <div style="margin-top:18px"><a class="btn btn-primary" style="width:100%;text-align:center" href="#">Book Appointment</a></div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-ptab="poverview">Overview</button>
+      <button class="tab-btn" data-ptab="previews">Reviews</button>
+    </div>
+
+    <div class="tab-panel active" id="ptab-poverview">
+      <h3>About "Dr. Anjali Sharma"</h3>
+      <p>Dr. Anjali Sharma Prayagraj ki mashhoor cardiologist hain, jinhe dil ke rogon ke ilaaj me 15 saal ka anubhav hai. CityCare Hospital me senior consultant ke roop me, unhone 12,000 se zyada patients ka safal ilaaj kiya hai. Ve patient-friendly approach aur saaf-saaf samjhane ke liye jaani jaati hain.</p>
+      <h3 style="margin-top:28px">Offered Services</h3>
+      <div class="accordion"><button class="accordion-head">ECG &amp; Echo Test <span>＋</span></button><div class="accordion-body"><p>ECG &amp; Echo Test CityCare Hospital me available hai. Slot book karke consult karein.</p></div></div>
+      <div class="accordion"><button class="accordion-head">Angiography <span>＋</span></button><div class="accordion-body"><p>Angiography CityCare Hospital me available hai. Slot book karke consult karein.</p></div></div>
+      <div class="accordion"><button class="accordion-head">Blood Pressure Management <span>＋</span></button><div class="accordion-body"><p>Blood Pressure Management CityCare Hospital me available hai. Slot book karke consult karein.</p></div></div>
+      <h3 style="margin-top:28px">Education</h3>
+      <div class="edu-item"><b>MBBS — 2005–2010</b><span>King George's Medical University, Lucknow</span></div>
+      <div class="edu-item"><b>MD (Cardiology) — 2010–2013</b><span>AIIMS, New Delhi</span></div>
+      <h3 style="margin-top:20px">Languages</h3>
+      <p>Hindi, English</p>
+    </div>
+
+    <div class="tab-panel" id="ptab-previews">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+        <h3 style="margin:0">Patient Reviews (86)</h3>
+        <a class="btn btn-primary btn-sm" href="#">Write Review</a>
+      </div>
+      <div style="background:#fff;border-radius:14px;box-shadow:var(--cbp-shadow);padding:24px;margin-bottom:20px">
+        <div class="dist-row"><span style="min-width:60px;font-weight:700">5 ★</span><div class="bar"><i style="width:75%"></i></div><span style="color:var(--cbp-muted)">75%</span></div>
+        <div class="dist-row"><span style="min-width:60px;font-weight:700">4 ★</span><div class="bar"><i style="width:15%"></i></div><span style="color:var(--cbp-muted)">15%</span></div>
+        <div class="dist-row"><span style="min-width:60px;font-weight:700">3 ★</span><div class="bar"><i style="width:6%"></i></div><span style="color:var(--cbp-muted)">6%</span></div>
+        <div class="dist-row"><span style="min-width:60px;font-weight:700">2 ★</span><div class="bar"><i style="width:2%"></i></div><span style="color:var(--cbp-muted)">2%</span></div>
+        <div class="dist-row"><span style="min-width:60px;font-weight:700">1 ★</span><div class="bar"><i style="width:2%"></i></div><span style="color:var(--cbp-muted)">2%</span></div>
+      </div>
+      <div class="review-card">
+        <div class="who"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="52" cy="52" r="2.4" fill="#191411"/><circle cx="68" cy="52" r="2.4" fill="#191411"/><path d="M50 63 Q60 59 70 63 Q64 68 60 67 Q56 68 50 63" fill="#191411"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#0E8AFD"/></svg><span>Manoj Tiwari <small style="color:var(--cbp-muted);font-weight:500">· 2 hafte pehle</small></span></div>
+        <div style="color:#f5a623;letter-spacing:2px;margin-bottom:8px">★★★★★</div>
+        <p style="color:var(--cbp-muted)">Bahut hi achhi doctor hain. Meri bypass surgery ke baad ka follow-up bilkul smooth raha. Har baat aaram se samjhati hain.</p>
+      </div>
+      <div class="review-card">
+        <div class="who"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#b57a4e"/><path d="M36 52 Q34 22 60 20 Q86 22 84 52 Q84 62 82 66 Q82 42 60 40 Q38 42 38 66 Q36 62 36 52" fill="#1f1a17"/><circle cx="60" cy="44" r="2.6" fill="#c81e3a"/><circle cx="52" cy="54" r="2.4" fill="#1f1a17"/><circle cx="68" cy="54" r="2.4" fill="#1f1a17"/><path d="M53 64 Q60 69 67 64" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#0DCEA9"/></svg><span>Kavita Yadav <small style="color:var(--cbp-muted);font-weight:500">· 1 mahine pehle</small></span></div>
+        <div style="color:#f5a623;letter-spacing:2px;margin-bottom:8px">★★★★☆</div>
+        <p style="color:var(--cbp-muted)">Video consultation liya tha. Time par call aayi, dawaiyan WhatsApp par mil gayin. Bas thoda wait karna pada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /view-profile -->
+
+<!-- ============ VIEW 4: BOOKING WIZARD ============ -->
+<div class="view" id="view-booking">
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="#">Home</a> / <a href="#">Dr. Anjali Sharma</a> / Book Appointment</div>
+    <h1>Book Appointment</h1>
+    <p style="color:var(--cbp-muted)">4 aasaan steps me slot book karein</p>
+  </div>
+</div>
+<section class="section">
+  <div class="container wiz-wrap">
+    <div class="wiz-steps">
+      <div class="wiz-step active" data-wstep="1"><span class="n">1</span> Doctor</div><div class="wiz-sep"></div>
+      <div class="wiz-step" data-wstep="2"><span class="n">2</span> Date &amp; Time</div><div class="wiz-sep"></div>
+      <div class="wiz-step" data-wstep="3"><span class="n">3</span> Details</div><div class="wiz-sep"></div>
+      <div class="wiz-step" data-wstep="4"><span class="n">4</span> Done</div>
+    </div>
+
+    <div class="wiz-panel active" id="wstep-1">
+      <div class="doc-sum">
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#cfe6ff"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#fff"/><path d="M52 88 L60 100 L68 88 L64 86 L56 86 Z" fill="#dfe9f5"/><path d="M46 92 Q60 112 74 92" stroke="#0DCEA9" stroke-width="3" fill="none"/><rect x="52" y="68" width="16" height="22" rx="6" fill="#a06a42"/><ellipse cx="60" cy="50" rx="22" ry="24" fill="#b57a4e"/><path d="M38 48 Q36 24 60 22 Q84 24 82 48 Q80 36 72 34 Q74 44 70 42 Q60 32 46 38 Q40 42 38 48" fill="#1f1a17"/><circle cx="60" cy="18" r="9" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="39" cy="56" r="2.6" fill="#c9a227"/><circle cx="81" cy="56" r="2.6" fill="#c9a227"/></svg>
+        <div><h3 style="font-size:19px">Dr. Anjali Sharma <span class="verified">✔</span></h3>
+        <p class="doc-meta">MBBS, MD — Cardiology · ★ 4.9 (210 votes)</p>
+        <p class="doc-meta"><b style="color:var(--cbp-navy)">₹800</b> / session</p></div>
+      </div>
+      <div class="form-field"><label>Clinic / Location chunein</label>
+        <select id="bk-clinic">
+          <option>CityCare Hospital — Civil Lines, Prayagraj</option>
+          <option>Sharma Clinic — Lucknow (Sat only)</option>
+          <option>📹 Video Consultation (online)</option>
+        </select></div>
+      <div class="form-field"><label>Appointment Type</label>
+        <select id="bk-type"><option>In-Person Visit</option><option>Video Consultation</option><option>Follow-up Visit</option></select></div>
+      <div class="wiz-nav"><span></span><button class="btn btn-primary" onclick="wizGo(2)">Continue →</button></div>
+    </div>
+
+    <div class="wiz-panel" id="wstep-2">
+      <h3 style="margin-bottom:14px">Date chunein</h3>
+      <div class="date-strip" id="dateStrip"></div>
+      <div class="slot-label">☀️ Morning Slots</div>
+      <div class="slot-grid" id="slotMorning"></div>
+      <div class="slot-label">🌙 Evening Slots</div>
+      <div class="slot-grid" id="slotEvening"></div>
+      <div class="err" id="slotErr">Kripya ek time slot chunein.</div>
+      <div class="wiz-nav"><button class="btn btn-outline" onclick="wizGo(1)">← Back</button><button class="btn btn-primary" onclick="wizGo(3)">Continue →</button></div>
+    </div>
+
+    <div class="wiz-panel" id="wstep-3">
+      <h3 style="margin-bottom:18px">Patient Details</h3>
+      <div class="form-field"><label>Patient ka naam *</label><input id="bk-name" type="text" placeholder="e.g. Ramesh Gupta"></div>
+      <div class="form-field"><label>Mobile Number *</label><input id="bk-phone" type="tel" maxlength="10" placeholder="10-digit mobile number"></div>
+      <div class="form-field"><label>Notes (optional)</label><textarea id="bk-notes" rows="3" placeholder="Symptoms ya koi khaas baat…"></textarea></div>
+      <div class="err" id="formErr">Naam aur sahi 10-digit mobile number zaroori hai.</div>
+      <div class="wiz-nav"><button class="btn btn-outline" onclick="wizGo(2)">← Back</button><button class="btn btn-primary" onclick="wizGo(4)">Confirm Booking ✓</button></div>
+    </div>
+
+    <div class="wiz-panel" id="wstep-4">
+      <div class="success-box">
+        <div class="success-ico">✓</div>
+        <h2 style="font-size:26px">Booking Successful!</h2>
+        <p style="color:var(--cbp-muted);margin-top:8px">Aapki appointment request mil gayi hai.</p>
+        <div class="apt-id" id="aptId">APT-0000</div>
+        <div style="text-align:left;max-width:440px;margin:0 auto 24px;background:var(--cbp-bg);border-radius:14px;padding:20px;font-size:14.5px;line-height:2" id="aptSummary"></div>
+        <a class="btn wa-btn" id="waBtn" href="#" target="_blank" rel="noopener">💬 WhatsApp par Confirm Karein</a>
+        <p style="margin-top:16px"><a href="#" onclick="wizReset();return false" style="color:var(--cbp-blue);font-weight:700">+ Ek aur booking karein</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /view-booking -->
+
+<!-- ============ VIEW 5: LOGIN / REGISTER ============ -->
+<div class="view" id="view-login">
+<section class="section">
+  <div class="container">
+    <div class="split-layout">
+      <div class="split-left">
+        <svg viewBox="0 0 300 300" style="max-width:250px;margin:0 auto 24px;display:block" role="img" aria-label="Medical illustration">
+          <circle cx="150" cy="150" r="140" fill="rgba(255,255,255,.14)"/>
+          <circle cx="150" cy="150" r="104" fill="rgba(255,255,255,.16)"/>
+          <rect x="104" y="62" width="92" height="150" rx="18" fill="#ffffff"/>
+          <rect x="136" y="88" width="28" height="80" rx="7" fill="#0E8AFD"/>
+          <rect x="110" y="114" width="80" height="28" rx="7" fill="#0E8AFD"/>
+          <rect x="118" y="188" width="64" height="10" rx="5" fill="#0DCEA9" opacity=".7"/>
+          <circle cx="150" cy="238" r="26" fill="#ffffff"/>
+          <path d="M150 226 v24 M138 238 h24" stroke="#0DCEA9" stroke-width="9" stroke-linecap="round"/>
+          <circle cx="66" cy="74" r="10" fill="#ffffff" opacity=".5"/>
+          <circle cx="238" cy="104" r="14" fill="#ffffff" opacity=".35"/>
+          <circle cx="56" cy="222" r="8" fill="#ffffff" opacity=".4"/>
+        </svg>
+        <h2>Welcome Back!</h2>
+        <p>Appointments manage karein, apne doctors se jude rahein — sab kuch ek jagah, Hindi aur English me.</p>
+        <div class="lstats">
+          <div><b>50K+</b><br><span>Happy Patients</span></div>
+          <div><b>500+</b><br><span>Verified Doctors</span></div>
+          <div><b>4.8★</b><br><span>Avg. Rating</span></div>
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-auth="login">Login</button>
+          <button class="auth-tab" data-auth="register">Register</button>
+        </div>
+        <div class="auth-form active" id="auth-login">
+          <h3 style="margin-bottom:18px">Patient / Doctor Login</h3>
+          <form onsubmit="return false">
+            <div class="form-field"><label>Mobile Number ya Username</label><input type="text" placeholder="e.g. 98765 43210"></div>
+            <div class="form-field"><label>Password</label><input type="password" placeholder="••••••••"></div>
+            <div style="text-align:right;margin:-6px 0 18px"><a href="#" style="color:var(--cbp-blue);font-size:13.5px;font-weight:700">Forgot password?</a></div>
+            <button class="btn btn-primary" style="width:100%" type="submit">Login →</button>
+          </form>
+          <div class="demo-hint"><b>Demo login (try karein):</b><br>🧑 Patient — <b>patientdemo</b> / 123456<br>🩺 Doctor — <b>doctordemo</b> / 123456<br>🏥 Clinic — <b>clinicdemo</b> / 123456</div>
+        </div>
+        <div class="auth-form" id="auth-register">
+          <h3 style="margin-bottom:18px">Naya Account Banayein</h3>
+          <form onsubmit="return false">
+            <div class="form-field"><label>Poora Naam *</label><input type="text" placeholder="e.g. Ramesh Gupta"></div>
+            <div class="form-field"><label>Mobile Number *</label><input type="tel" maxlength="10" placeholder="10-digit mobile number"></div>
+            <div class="form-field"><label>Main hoon…</label><select><option>Patient</option><option>Doctor</option><option>Clinic Staff</option></select></div>
+            <button class="btn btn-primary" style="width:100%" type="submit">Register →</button>
+          </form>
+          <p style="font-size:13px;color:var(--cbp-muted);margin-top:14px">Register karke aap hamari <a href="#" style="color:var(--cbp-blue)">Terms</a> se sehmat hote hain.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /view-login -->
+
+<!-- ============ VIEW 6: PATIENT DASHBOARD ============ -->
+<div class="view" id="view-patient">
+<section class="section" style="padding-top:44px">
+  <div class="container">
+    <div class="dash-layout">
+      <aside class="dash-side">
+        <div class="dash-user">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="52" cy="52" r="2.4" fill="#191411"/><circle cx="68" cy="52" r="2.4" fill="#191411"/><path d="M50 63 Q60 59 70 63 Q64 68 60 67 Q56 68 50 63" fill="#191411"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#0E8AFD"/></svg>
+          <div><b>Ramesh Gupta</b><span>📞 +91 98765 43210</span></div>
+        </div>
+        <nav class="dash-nav">
+          <a href="#" class="active">📊 Dashboard</a>
+          <a href="#">📅 My Appointments</a>
+          <a href="#">❤️ Favourites</a>
+          <a href="#">👤 Profile</a>
+          <a href="#">🚪 Logout</a>
+        </nav>
+      </aside>
+      <div class="dash-main">
+        <h2>Namaste, Ramesh ji 🙏</h2>
+        <p class="dash-sub">Aapki sehat ka hisaab, ek nazar me.</p>
+        <div class="stat-cards">
+          <div class="stat-card"><div class="sico" style="background:#e3f2ff">📅</div><b>2</b><span>Upcoming Appointments</span></div>
+          <div class="stat-card"><div class="sico" style="background:#d8f7ef">✔️</div><b>5</b><span>Completed Visits</span></div>
+          <div class="stat-card"><div class="sico" style="background:#ffe9f0">❤️</div><b>3</b><span>Favourite Doctors</span></div>
+        </div>
+        <div class="panel">
+          <h3>Upcoming Appointments</h3>
+          <div style="overflow-x:auto"><table class="dtable">
+            <tr><th>ID</th><th>Doctor</th><th>Date</th><th>Time</th><th>Status</th><th></th></tr>
+            <tr><td><b>APT-4821</b></td><td>Dr. Anjali Sharma<br><small style="color:var(--cbp-muted)">Cardiology · ₹800</small></td><td>16 Oct 2026</td><td>10:30 AM</td><td><span class="st st-confirmed">Confirmed</span></td><td><button class="mini-btn mini-no" onclick="cancelApt(this)">Cancel</button></td></tr>
+            <tr><td><b>APT-4835</b></td><td>Dr. Vikram Singh<br><small style="color:var(--cbp-muted)">Pediatrics · ₹400</small></td><td>18 Oct 2026</td><td>5:00 PM</td><td><span class="st st-pending">Pending</span></td><td><button class="mini-btn mini-no" onclick="cancelApt(this)">Cancel</button></td></tr>
+          </table></div>
+        </div>
+        <div class="panel">
+          <h3>Past Visits</h3>
+          <div class="past-item">
+            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#b57a4e"/><path d="M38 48 Q36 24 60 22 Q84 24 82 48 Q80 36 72 34 Q74 44 70 42 Q60 32 46 38 Q40 42 38 48" fill="#1f1a17"/><circle cx="60" cy="18" r="9" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="39" cy="56" r="2.6" fill="#c9a227"/><circle cx="81" cy="56" r="2.6" fill="#c9a227"/></svg>
+            <div style="flex:1"><b>Dr. Anjali Sharma</b><br><small style="color:var(--cbp-muted)">02 Oct 2026 · ECG + Consultation · ₹800</small></div>
+            <span class="st st-confirmed">Done</span>
+          </div>
+          <div class="past-item">
+            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#a9713f"/><path d="M38 46 Q38 24 60 22 Q82 24 82 46 Q78 32 60 32 Q42 32 38 46" fill="#191411"/><circle cx="52" cy="52" r="2.4" fill="#191411"/><circle cx="68" cy="52" r="2.4" fill="#191411"/><path d="M50 63 Q60 59 70 63 Q64 68 60 67 Q56 68 50 63" fill="#191411"/><path d="M55 72 Q60 74 65 72" stroke="#6e4423" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 118 Q22 88 60 86 Q98 88 100 118 Z" fill="#0E8AFD"/></svg>
+            <div style="flex:1"><b>Dr. Rajesh Gupta</b><br><small style="color:var(--cbp-muted)">14 Sep 2026 · Knee Consultation · ₹600</small></div>
+            <span class="st st-confirmed">Done</span>
+          </div>
+          <div class="past-item">
+            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#b57a4e"/><path d="M36 52 Q34 22 60 20 Q86 22 84 52 Q84 60 82 64 Q82 40 60 38 Q38 40 38 64 Q36 60 36 52" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="38" cy="58" r="2.6" fill="#c9a227"/><circle cx="82" cy="58" r="2.6" fill="#c9a227"/></svg>
+            <div style="flex:1"><b>Dr. Priya Patel</b><br><small style="color:var(--cbp-muted)">28 Aug 2026 · Skin Consultation · ₹500</small></div>
+            <span class="st st-confirmed">Done</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /view-patient -->
+
+<!-- ============ VIEW 7: DOCTOR DASHBOARD ============ -->
+<div class="view" id="view-doctor">
+<section class="section" style="padding-top:44px">
+  <div class="container">
+    <div class="dash-layout">
+      <aside class="dash-side">
+        <div class="dash-user">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="#e8eefc"/><ellipse cx="60" cy="52" rx="22" ry="24" fill="#b57a4e"/><path d="M38 48 Q36 24 60 22 Q84 24 82 48 Q80 36 72 34 Q74 44 70 42 Q60 32 46 38 Q40 42 38 48" fill="#1f1a17"/><circle cx="60" cy="18" r="9" fill="#1f1a17"/><circle cx="60" cy="42" r="2.6" fill="#c81e3a"/><circle cx="52" cy="52" r="2.4" fill="#1f1a17"/><circle cx="68" cy="52" r="2.4" fill="#1f1a17"/><path d="M53 62 Q60 67 67 62" stroke="#7c4a2d" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="39" cy="56" r="2.6" fill="#c9a227"/><circle cx="81" cy="56" r="2.6" fill="#c9a227"/></svg>
+          <div><b>Dr. Anjali Sharma</b><span>Cardiology · ★ 4.9</span></div>
+        </div>
+        <nav class="dash-nav">
+          <a href="#" class="active">📊 Dashboard</a>
+          <a href="#">📅 Appointments</a>
+          <a href="#">🗓️ Schedule</a>
+          <a href="#">🧑‍🤝‍🧑 Patients</a>
+          <a href="#">👤 Profile</a>
+          <a href="#">🚪 Logout</a>
+        </nav>
+      </aside>
+      <div class="dash-main">
+        <h2>Namaste, Doctor 👩‍⚕️</h2>
+        <p class="dash-sub">Aaj — 14 October 2026, Wednesday</p>
+        <div class="stat-cards">
+          <div class="stat-card"><div class="sico" style="background:#e3f2ff">📅</div><b>8</b><span>Aaj ke Appointments</span></div>
+          <div class="stat-card"><div class="sico" style="background:#d8f7ef">🧑‍🤝‍🧑</div><b>120</b><span>Kul Patients</span></div>
+          <div class="stat-card"><div class="sico" style="background:#fff3d6">💰</div><b>₹6,400</b><span>Aaj ki Kamai</span></div>
+        </div>
+        <div class="panel">
+          <h3>Aaj ke Appointments</h3>
+          <div style="overflow-x:auto"><table class="dtable">
+            <tr><th>Time</th><th>Patient</th><th>Phone</th><th>Status</th><th>Action</th></tr>
+            <tr><td><b>10:00 AM</b></td><td>Sunita Devi</td><td>+91 91234 56780</td><td><span class="st st-confirmed">Confirmed</span></td><td><span style="color:var(--cbp-muted);font-size:13px">—</span></td></tr>
+            <tr><td><b>10:30 AM</b></td><td>Manoj Tiwari</td><td>+91 99887 66554</td><td><span class="st st-pending">Pending</span></td><td><button class="mini-btn mini-ok" onclick="setAptStatus(this,'confirmed')">Confirm</button><button class="mini-btn mini-no" onclick="setAptStatus(this,'cancelled')">Cancel</button></td></tr>
+            <tr><td><b>11:00 AM</b></td><td>Kavita Yadav</td><td>+91 98765 12340</td><td><span class="st st-pending">Pending</span></td><td><button class="mini-btn mini-ok" onclick="setAptStatus(this,'confirmed')">Confirm</button><button class="mini-btn mini-no" onclick="setAptStatus(this,'cancelled')">Cancel</button></td></tr>
+            <tr><td><b>12:00 PM</b></td><td>Arjun Singh</td><td>+91 91234 56781</td><td><span class="st st-confirmed">Confirmed</span></td><td><span style="color:var(--cbp-muted);font-size:13px">—</span></td></tr>
+          </table></div>
+        </div>
+        <div class="panel">
+          <h3>Weekly Schedule</h3>
+          <div class="sched-grid">
+            <div class="sched-day"><b>Mon</b>10–1<br>5–8</div>
+            <div class="sched-day"><b>Tue</b>10–1<br>5–8</div>
+            <div class="sched-day"><b>Wed</b>10–1<br><span style="color:var(--cbp-muted)">—</span></div>
+            <div class="sched-day"><b>Thu</b>10–1<br>5–8</div>
+            <div class="sched-day"><b>Fri</b>10–1<br>5–8</div>
+            <div class="sched-day"><b>Sat</b>10–1<br><span style="color:var(--cbp-muted)">—</span></div>
+            <div class="sched-day off"><b>Sun</b>Closed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /view-doctor -->
+
+
+<!-- ============ SHARED FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#" style="color:#fff;margin-bottom:16px"><span class="mark">✚</span> ClinicBook Pro</a>
+        <p>Working for Your Better Health. Verified doctors, instant booking, WhatsApp confirmations.</p>
+        <p>📞 +91 1800 123 4567<br>✉️ care@clinicbookpro.in<br>📍 Civil Lines, Prayagraj, UP</p>
+      </div>
+      <div><h4>Quick Links</h4><a href="#">Find Doctors</a><a href="#">Book Appointment</a><a href="#">Specialities</a><a href="#">Health Blog</a></div>
+      <div><h4>Specialities</h4><a href="#">Cardiology</a><a href="#">Dermatology</a><a href="#">Orthopedic</a><a href="#">Pediatrics</a></div>
+      <div><h4>Stay Updated</h4><p>Sehat ke tips, seedha inbox me.</p><div class="newsletter"><input type="email" placeholder="Email address"><button>Join</button></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom">Copyright © 2026 ClinicBook Pro. All Rights Reserved. | Made in India 🇮🇳</div>
+</footer>
+
+<script>
+// Preview view switcher
+document.querySelectorAll('.ptab').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.ptab').forEach(function(b){b.classList.remove('active')});
+    document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active')});
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.view).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+// Accordions (FAQ + services)
+document.querySelectorAll('.accordion-head').forEach(function(head){
+  head.addEventListener('click', function(){
+    var acc = head.parentElement, body = acc.querySelector('.accordion-body');
+    var open = acc.classList.toggle('open');
+    body.style.maxHeight = open ? body.scrollHeight + 'px' : '0';
+  });
+});
+// Profile tabs
+document.querySelectorAll('[data-ptab]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('[data-ptab]').forEach(function(b){b.classList.remove('active')});
+    document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
+    btn.classList.add('active');
+    document.getElementById('ptab-' + btn.dataset.ptab).classList.add('active');
+  });
+});
+// Animated counters
+var counted = false;
+function animateCounters(){
+  if(counted) return;
+  var els = document.querySelectorAll('[data-count]');
+  var visible = false;
+  els.forEach(function(el){ var r = el.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0) visible = true; });
+  if(!visible) return;
+  counted = true;
+  els.forEach(function(el){
+    var target = parseInt(el.dataset.count, 10), start = null;
+    function fmt(n){ return n >= 1000 ? (n/1000).toFixed(n%1000===0?0:1).replace(/\.0$/,'') + 'K' : n; }
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / 1600, 1);
+      el.textContent = fmt(Math.floor(target * (0.2 + 0.8*p*p)));
+      if(p < 1) requestAnimationFrame(step); else el.textContent = fmt(target) + '+';
+    }
+    requestAnimationFrame(step);
+  });
+}
+window.addEventListener('scroll', animateCounters);
+setTimeout(animateCounters, 600);
+// ===== Booking wizard =====
+var bkState = {step:1, date:null, slot:null};
+var bkDays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+var bkMonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function buildDates(){
+  var strip = document.getElementById('dateStrip');
+  if(!strip || strip.children.length) return;
+  var today = new Date();
+  for(var i=0;i<7;i++){
+    var d = new Date(today); d.setDate(today.getDate()+i);
+    var chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'date-chip' + (i===0 ? ' sel' : '');
+    chip.innerHTML = '<span>'+bkDays[d.getDay()]+'</span><b>'+d.getDate()+'</b><span>'+bkMonths[d.getMonth()]+'</span>';
+    chip.dataset.datestr = d.getDate()+' '+bkMonths[d.getMonth()]+' '+d.getFullYear();
+    (function(c){
+      c.addEventListener('click', function(){
+        document.querySelectorAll('.date-chip').forEach(function(x){x.classList.remove('sel')});
+        c.classList.add('sel');
+        bkState.date = c.dataset.datestr;
+        bkState.slot = null;
+        buildSlots();
+      });
+    })(chip);
+    strip.appendChild(chip);
+    if(i===0) bkState.date = chip.dataset.datestr;
+  }
+}
+function buildSlots(){
+  var morn = ['10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM'];
+  var eve = ['5:00 PM','5:30 PM','6:00 PM','6:30 PM','7:00 PM'];
+  var booked = ['11:00 AM','6:00 PM'];
+  function render(id, arr){
+    var el = document.getElementById(id);
+    if(!el) return;
+    el.innerHTML = '';
+    arr.forEach(function(s){
+      var d = document.createElement('button');
+      d.type = 'button';
+      var isBooked = booked.indexOf(s) >= 0;
+      d.className = 'slot' + (isBooked ? ' booked' : '');
+      d.textContent = s;
+      d.disabled = isBooked;
+      if(!isBooked){
+        d.addEventListener('click', function(){
+          document.querySelectorAll('.slot').forEach(function(x){x.classList.remove('sel')});
+          d.classList.add('sel');
+          bkState.slot = s;
+          document.getElementById('slotErr').style.display = 'none';
+        });
+      }
+      el.appendChild(d);
+    });
+  }
+  render('slotMorning', morn);
+  render('slotEvening', eve);
+}
+function wizGo(n){
+  if(n===3 && !bkState.slot){
+    document.getElementById('slotErr').style.display = 'block';
+    return;
+  }
+  if(n===4){
+    var name = document.getElementById('bk-name').value.trim();
+    var phone = document.getElementById('bk-phone').value.replace(/\D/g,'');
+    if(!name || phone.length !== 10){
+      document.getElementById('formErr').style.display = 'block';
+      return;
+    }
+    document.getElementById('formErr').style.display = 'none';
+    var aptId = 'APT-' + Math.floor(1000 + Math.random()*9000);
+    document.getElementById('aptId').textContent = aptId;
+    var clinic = document.getElementById('bk-clinic').value;
+    var type = document.getElementById('bk-type').value;
+    document.getElementById('aptSummary').innerHTML =
+      '<b>Doctor:</b> Dr. Anjali Sharma (Cardiology)<br>' +
+      '<b>Date:</b> ' + bkState.date + '<br>' +
+      '<b>Time:</b> ' + bkState.slot + '<br>' +
+      '<b>Patient:</b> ' + name + '<br>' +
+      '<b>Phone:</b> +91 ' + phone + '<br>' +
+      '<b>Clinic:</b> ' + clinic + '<br>' +
+      '<b>Type:</b> ' + type + '<br>' +
+      '<b>Fees:</b> ₹800 (clinic me pay karein)';
+    var msg = encodeURIComponent('Namaste! Maine ClinicBook Pro se appointment book ki hai.\nAppointment ID: ' + aptId + '\nDoctor: Dr. Anjali Sharma\nDate: ' + bkState.date + '\nTime: ' + bkState.slot + '\nPatient: ' + name);
+    document.getElementById('waBtn').href = 'https://wa.me/919876543210?text=' + msg;
+  }
+  document.querySelectorAll('.wiz-panel').forEach(function(p){p.classList.remove('active')});
+  document.getElementById('wstep-' + n).classList.add('active');
+  document.querySelectorAll('.wiz-step').forEach(function(s){
+    var sn = parseInt(s.dataset.wstep, 10);
+    s.classList.toggle('active', sn === n);
+    s.classList.toggle('done', sn < n);
+  });
+  bkState.step = n;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function wizReset(){
+  bkState.slot = null;
+  document.getElementById('bk-name').value = '';
+  document.getElementById('bk-phone').value = '';
+  document.getElementById('bk-notes').value = '';
+  buildSlots();
+  wizGo(1);
+}
+// ===== Login / Register tabs =====
+document.querySelectorAll('.auth-tab').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.auth-tab').forEach(function(b){b.classList.remove('active')});
+    document.querySelectorAll('.auth-form').forEach(function(f){f.classList.remove('active')});
+    btn.classList.add('active');
+    document.getElementById('auth-' + btn.dataset.auth).classList.add('active');
+  });
+});
+// ===== Dashboard sidebar nav highlight =====
+document.querySelectorAll('.dash-nav a').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var nav = this.closest('.dash-nav');
+    nav.querySelectorAll('a').forEach(function(x){x.classList.remove('active')});
+    this.classList.add('active');
+  });
+});
+// ===== Appointment status actions =====
+function cancelApt(btn){
+  var row = btn.closest('tr');
+  var badge = row.querySelector('.st');
+  if(!badge) return;
+  badge.className = 'st st-cancelled';
+  badge.textContent = 'Cancelled';
+  btn.remove();
+}
+function setAptStatus(btn, status){
+  var row = btn.closest('tr');
+  var badge = row.querySelector('.st');
+  if(!badge) return;
+  if(status === 'confirmed'){
+    badge.className = 'st st-confirmed';
+    badge.textContent = 'Confirmed';
+  } else {
+    badge.className = 'st st-cancelled';
+    badge.textContent = 'Cancelled';
+  }
+  btn.parentElement.innerHTML = '<span style="color:var(--cbp-muted);font-size:13px">Updated ✓</span>';
+}
+// ===== Init wizard data =====
+buildDates();
+buildSlots();
+
+</script>
+</body>
+</html>
