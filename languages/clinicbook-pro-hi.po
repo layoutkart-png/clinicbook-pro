@@ -1,0 +1,620 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ClinicBook Pro 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-14 16:30+0530\n"
+"PO-Revision-Date: 2026-10-14 16:30+0530\n"
+"Last-Translator: ClinicBook Pro Team\n"
+"Language-Team: Hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Primary Menu"
+msgstr "मुख्य मेन्यू"
+
+msgid "Footer Menu"
+msgstr "फुटर मेन्यू"
+
+msgid "Doctors"
+msgstr "डॉक्टर"
+
+msgid "Doctor"
+msgstr "डॉक्टर"
+
+msgid "Add New Doctor"
+msgstr "नया डॉक्टर जोड़ें"
+
+msgid "Edit Doctor"
+msgstr "डॉक्टर संपादित करें"
+
+msgid "Specializations"
+msgstr "विशेषज्ञताएं"
+
+msgid "Specialization"
+msgstr "विशेषज्ञता"
+
+msgid "Appointments"
+msgstr "अपॉइंटमेंट"
+
+msgid "Appointment"
+msgstr "अपॉइंटमेंट"
+
+msgid "Login"
+msgstr "लॉगिन"
+
+msgid "Register"
+msgstr "रजिस्टर"
+
+msgid "Logout"
+msgstr "लॉगआउट"
+
+msgid "Menu"
+msgstr "मेन्यू"
+
+msgid "Primary"
+msgstr "मुख्य"
+
+msgid "Home"
+msgstr "होम"
+
+msgid "Find the Right Doctor, Book in Seconds"
+msgstr "सही डॉक्टर खोजें, सेकंडों में बुक करें"
+
+msgid "Verified doctors, instant slot booking and WhatsApp confirmations — healthcare made simple."
+msgstr "सत्यापित डॉक्टर, तुरंत स्लॉट बुकिंग और WhatsApp कन्फर्मेशन — स्वास्थ्य सेवा अब आसान।"
+
+msgid "Search doctors, clinics…"
+msgstr "डॉक्टर, क्लिनिक खोजें…"
+
+msgid "All Specialities"
+msgstr "सभी विशेषज्ञताएं"
+
+msgid "Search"
+msgstr "खोजें"
+
+msgid "Verified Doctors"
+msgstr "सत्यापित डॉक्टर"
+
+msgid "Patient Rating"
+msgstr "मरीज़ रेटिंग"
+
+msgid "Book Appointment"
+msgstr "अपॉइंटमेंट बुक करें"
+
+msgid "Find Doctors"
+msgstr "डॉक्टर खोजें"
+
+msgid "Lab Tests"
+msgstr "लैब टेस्ट"
+
+msgid "Medicines"
+msgstr "दवाइयां"
+
+msgid "Pick a slot that suits you."
+msgstr "अपने अनुकूल स्लॉट चुनें।"
+
+msgid "Verified specialists near you."
+msgstr "आपके पास सत्यापित विशेषज्ञ।"
+
+msgid "Home sample collection."
+msgstr "घर से सैंपल संग्रह।"
+
+msgid "Order with prescription."
+msgstr "पर्चे के साथ ऑर्डर करें।"
+
+msgid "Specialities"
+msgstr "विशेषज्ञताएं"
+
+msgid "Browse by Speciality"
+msgstr "विशेषज्ञता के अनुसार देखें"
+
+msgid "From heart to skin — find the right specialist for every concern."
+msgstr "दिल से त्वचा तक — हर समस्या के लिए सही विशेषज्ञ खोजें।"
+
+msgid "Featured Doctors"
+msgstr "चुनिंदा डॉक्टर"
+
+msgid "Our Highlighted Doctors"
+msgstr "हमारे प्रमुख डॉक्टर"
+
+msgid "Top-rated, verified doctors trusted by thousands of patients."
+msgstr "हज़ारों मरीज़ों के भरोसेमंद, टॉप-रेटेड सत्यापित डॉक्टर।"
+
+msgid "View All Doctors"
+msgstr "सभी डॉक्टर देखें"
+
+msgid "How It Works"
+msgstr "यह कैसे काम करता है"
+
+msgid "Four simple steps to your appointment."
+msgstr "आपके अपॉइंटमेंट तक चार आसान चरण।"
+
+msgid "Pick a Slot"
+msgstr "स्लॉट चुनें"
+
+msgid "Confirm"
+msgstr "पुष्टि करें"
+
+msgid "Visit / Video Call"
+msgstr "मिलें / वीडियो कॉल"
+
+msgid "Find doctors by speciality or name."
+msgstr "विशेषज्ञता या नाम से डॉक्टर खोजें।"
+
+msgid "Choose date & time that suits you."
+msgstr "अपने अनुकूल तारीख और समय चुनें।"
+
+msgid "Enter details, get instant confirmation."
+msgstr "विवरण दर्ज करें, तुरंत पुष्टि पाएं।"
+
+msgid "Meet your doctor, in-person or online."
+msgstr "अपने डॉक्टर से मिलें — क्लिनिक में या ऑनलाइन।"
+
+msgid "Why Choose ClinicBook Pro"
+msgstr "ClinicBook Pro ही क्यों"
+
+msgid "Healthcare booking without the headache."
+msgstr "बिना झंझट के स्वास्थ्य बुकिंग।"
+
+msgid "Every doctor is credential-checked before listing. No fakes, no surprises."
+msgstr "हर डॉक्टर की योग्यता जांच के बाद ही लिस्टिंग। कोई फर्जीवाड़ा नहीं।"
+
+msgid "Instant Booking"
+msgstr "तुरंत बुकिंग"
+
+msgid "Real-time slots, instant confirmation and WhatsApp reminders. No phone-tag."
+msgstr "रियल-टाइम स्लॉट, तुरंत पुष्टि और WhatsApp रिमाइंडर।"
+
+msgid "Transparent Pricing"
+msgstr "पारदर्शी शुल्क"
+
+msgid "Fees in ₹ shown upfront. No hidden charges, ever."
+msgstr "शुल्क ₹ में पहले से दिखाया जाता है। कोई छिपा शुल्क नहीं।"
+
+msgid "What Patients Say"
+msgstr "मरीज़ क्या कहते हैं"
+
+msgid "Real stories from real patients."
+msgstr "असली मरीज़ों की असली कहानियां।"
+
+msgid "Frequently Asked Questions"
+msgstr "अक्सर पूछे जाने वाले प्रश्न"
+
+msgid "Health Blog"
+msgstr "स्वास्थ्य ब्लॉग"
+
+msgid "Tips from our doctors."
+msgstr "हमारे डॉक्टरों के सुझाव।"
+
+msgid "Filter Doctors"
+msgstr "डॉक्टर फ़िल्टर करें"
+
+msgid "Name or clinic…"
+msgstr "नाम या क्लिनिक…"
+
+msgid "No doctors found."
+msgstr "कोई डॉक्टर नहीं मिला।"
+
+msgid "No doctors found"
+msgstr "कोई डॉक्टर नहीं मिला"
+
+msgid "Try a different search or specialization."
+msgstr "कोई और खोज या विशेषज्ञता आज़माएं।"
+
+msgid "View Profile"
+msgstr "प्रोफ़ाइल देखें"
+
+msgid "Available Today"
+msgstr "आज उपलब्ध"
+
+msgid "Available"
+msgstr "उपलब्ध"
+
+msgid "On Leave"
+msgstr "छुट्टी पर"
+
+msgid "yrs exp."
+msgstr "वर्ष अनुभव"
+
+msgid "yrs"
+msgstr "वर्ष"
+
+msgid "Consultation"
+msgstr "परामर्श"
+
+msgid "Book"
+msgstr "बुक करें"
+
+msgid "General"
+msgstr "जनरल"
+
+msgid "Choose a Doctor"
+msgstr "डॉक्टर चुनें"
+
+msgid "— Select —"
+msgstr "— चुनें —"
+
+msgid "Continue"
+msgstr "आगे बढ़ें"
+
+msgid "No doctors available yet."
+msgstr "अभी कोई डॉक्टर उपलब्ध नहीं है।"
+
+msgid "Date & Time"
+msgstr "तारीख और समय"
+
+msgid "Your Details"
+msgstr "आपका विवरण"
+
+msgid "Confirmed"
+msgstr "पुष्ट"
+
+msgid "Consultation Type"
+msgstr "परामर्श का प्रकार"
+
+msgid "In-Person at Clinic"
+msgstr "क्लिनिक में मिलकर"
+
+msgid "Video Consultation"
+msgstr "वीडियो परामर्श"
+
+msgid "In-Person"
+msgstr "मिलकर"
+
+msgid "Video"
+msgstr "वीडियो"
+
+msgid "Select Date"
+msgstr "तारीख चुनें"
+
+msgid "Available Slots"
+msgstr "उपलब्ध स्लॉट"
+
+msgid "Pick a date to see slots."
+msgstr "स्लॉट देखने के लिए तारीख चुनें।"
+
+msgid "Back"
+msgstr "पीछे"
+
+msgid "Full Name *"
+msgstr "पूरा नाम *"
+
+msgid "e.g. Rahul Sharma"
+msgstr "जैसे राहुल शर्मा"
+
+msgid "Mobile Number *"
+msgstr "मोबाइल नंबर *"
+
+msgid "10-digit mobile number"
+msgstr "10 अंकों का मोबाइल नंबर"
+
+msgid "Notes (optional)"
+msgstr "नोट (वैकल्पिक)"
+
+msgid "Symptoms, questions…"
+msgstr "लक्षण, प्रश्न…"
+
+msgid "Confirm Appointment"
+msgstr "अपॉइंटमेंट पक्का करें"
+
+msgid "Appointment Requested!"
+msgstr "अपॉइंटमेंट अनुरोध भेजा गया!"
+
+msgid "The clinic will confirm shortly. Save your appointment ID:"
+msgstr "क्लिनिक जल्द पुष्टि करेगा। अपनी अपॉइंटमेंट ID संभाल कर रखें:"
+
+msgid "Confirm on WhatsApp"
+msgstr "WhatsApp पर पुष्टि करें"
+
+msgid "Back to Home"
+msgstr "होम पर वापस"
+
+msgid "Please select a time slot."
+msgstr "कृपया समय स्लॉट चुनें।"
+
+msgid "Loading…"
+msgstr "लोड हो रहा है…"
+
+msgid "No slots available on this date. Please try another day."
+msgstr "इस तारीख को कोई स्लॉट उपलब्ध नहीं है। कोई और दिन आज़माएं।"
+
+msgid "Something went wrong. Please try again."
+msgstr "कुछ गलत हुआ। कृपया पुनः प्रयास करें।"
+
+msgid "Overview"
+msgstr "परिचय"
+
+msgid "Reviews"
+msgstr "समीक्षाएं"
+
+msgid "Gallery"
+msgstr "गैलरी"
+
+msgid "Offered Services"
+msgstr "उपलब्ध सेवाएं"
+
+msgid "Education"
+msgstr "शिक्षा"
+
+msgid "Languages"
+msgstr "भाषाएं"
+
+msgid "Add Feedback"
+msgstr "फीडबैक दें"
+
+msgid "Write a Review"
+msgstr "समीक्षा लिखें"
+
+msgid "Submit Review"
+msgstr "समीक्षा भेजें"
+
+msgid "Your review"
+msgstr "आपकी समीक्षा"
+
+msgid "Quick Links"
+msgstr "त्वरित लिंक"
+
+msgid "Contact"
+msgstr "संपर्क"
+
+msgid "All rights reserved."
+msgstr "सर्वाधिकार सुरक्षित।"
+
+msgid "Book verified doctors in seconds. Instant slot booking and WhatsApp confirmations — healthcare made simple."
+msgstr "सेकंडों में सत्यापित डॉक्टर बुक करें। तुरंत स्लॉट बुकिंग और WhatsApp पुष्टि।"
+
+msgid "Email for health tips"
+msgstr "स्वास्थ्य टिप्स के लिए ईमेल"
+
+msgid "Email"
+msgstr "ईमेल"
+
+msgid "Join"
+msgstr "जुड़ें"
+
+msgid "Read More"
+msgstr "और पढ़ें"
+
+msgid "Nothing found."
+msgstr "कुछ नहीं मिला।"
+
+msgid "No results. Try another search."
+msgstr "कोई परिणाम नहीं। कोई और खोज आज़माएं।"
+
+msgid "Page not found"
+msgstr "पेज नहीं मिला"
+
+msgid "The page you are looking for may have been moved or deleted."
+msgstr "आप जो पेज खोज रहे हैं वह हटाया या स्थानांतरित किया गया हो सकता है।"
+
+msgid "My Appointments"
+msgstr "मेरे अपॉइंटमेंट"
+
+msgid "Enter your 10-digit mobile number"
+msgstr "अपना 10 अंकों का मोबाइल नंबर दर्ज करें"
+
+msgid "No appointments found for this number."
+msgstr "इस नंबर पर कोई अपॉइंटमेंट नहीं मिला।"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Date"
+msgstr "तारीख"
+
+msgid "Time"
+msgstr "समय"
+
+msgid "Status"
+msgstr "स्थिति"
+
+msgid "Patient"
+msgstr "मरीज़"
+
+msgid "Actions"
+msgstr "कार्रवाई"
+
+msgid "Cancel"
+msgstr "रद्द करें"
+
+msgid "Today's Appointments"
+msgstr "आज के अपॉइंटमेंट"
+
+msgid "No upcoming appointments."
+msgstr "कोई आगामी अपॉइंटमेंट नहीं है।"
+
+msgid "Please log in with a doctor account to view the dashboard."
+msgstr "डैशबोर्ड देखने के लिए कृपया डॉक्टर खाते से लॉगिन करें।"
+
+msgid "Not allowed."
+msgstr "अनुमति नहीं है।"
+
+msgid "Invalid request."
+msgstr "अमान्य अनुरोध।"
+
+msgid "Invalid doctor selected."
+msgstr "अमान्य डॉक्टर चुना गया।"
+
+msgid "Please choose a valid date."
+msgstr "कृपया सही तारीख चुनें।"
+
+msgid "Please enter your full name."
+msgstr "कृपया अपना पूरा नाम दर्ज करें।"
+
+msgid "Please enter a valid 10-digit mobile number."
+msgstr "कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।"
+
+msgid "This slot was just booked. Please choose another."
+msgstr "यह स्लॉट अभी बुक हो गया। कृपया कोई और चुनें।"
+
+msgid "Could not save your appointment. Please try again."
+msgstr "आपका अपॉइंटमेंट सहेजा नहीं जा सका। कृपया पुनः प्रयास करें।"
+
+msgid "Consultation Fees (₹)"
+msgstr "परामर्श शुल्क (₹)"
+
+msgid "Experience (years)"
+msgstr "अनुभव (वर्ष)"
+
+msgid "Credentials (e.g. MBBS, MD)"
+msgstr "योग्यता (जैसे MBBS, MD)"
+
+msgid "Clinic Name"
+msgstr "क्लिनिक का नाम"
+
+msgid "Location / City"
+msgstr "स्थान / शहर"
+
+msgid "Phone"
+msgstr "फ़ोन"
+
+msgid "Languages (comma separated)"
+msgstr "भाषाएं (अल्पविराम से अलग करें)"
+
+msgid "Services (one per line)"
+msgstr "सेवाएं (प्रति पंक्ति एक)"
+
+msgid "Consultation Types"
+msgstr "परामर्श के प्रकार"
+
+msgid "Rating (0–5)"
+msgstr "रेटिंग (0–5)"
+
+msgid "Patients Treated"
+msgstr "इलाज किए गए मरीज़"
+
+msgid "Featured on Homepage"
+msgstr "होमपेज पर दिखाएं"
+
+msgid "Show in Featured Doctors"
+msgstr "चुनिंदा डॉक्टरों में दिखाएं"
+
+msgid "Doctor Details"
+msgstr "डॉक्टर विवरण"
+
+msgid "Weekly Schedule"
+msgstr "साप्ताहिक समय-सारणी"
+
+msgid "Set available time ranges per day (24h format, e.g. 10:00–14:00). Leave blank for a day off. Slot duration in minutes."
+msgstr "प्रति दिन उपलब्ध समय सीमा निर्धारित करें (24 घंटे प्रारूप, जैसे 10:00–14:00)। छुट्टी के दिन खाली छोड़ें। स्लॉट अवधि मिनटों में।"
+
+msgid "Day"
+msgstr "दिन"
+
+msgid "Morning (from–to)"
+msgstr "सुबह (से–तक)"
+
+msgid "Evening (from–to)"
+msgstr "शाम (से–तक)"
+
+msgid "Slot (min)"
+msgstr "स्लॉट (मिनट)"
+
+msgid "Monday"
+msgstr "सोमवार"
+
+msgid "Tuesday"
+msgstr "मंगलवार"
+
+msgid "Wednesday"
+msgstr "बुधवार"
+
+msgid "Thursday"
+msgstr "गुरुवार"
+
+msgid "Friday"
+msgstr "शुक्रवार"
+
+msgid "Saturday"
+msgstr "शनिवार"
+
+msgid "Sunday"
+msgstr "रविवार"
+
+msgid "Mon"
+msgstr "सोम"
+
+msgid "Tue"
+msgstr "मंगल"
+
+msgid "Wed"
+msgstr "बुध"
+
+msgid "Thu"
+msgstr "गुरु"
+
+msgid "Fri"
+msgstr "शुक्र"
+
+msgid "Sat"
+msgstr "शनि"
+
+msgid "Sun"
+msgstr "रवि"
+
+msgid "Clinic Settings"
+msgstr "क्लिनिक सेटिंग्स"
+
+msgid "Clinic Phone"
+msgstr "क्लिनिक फ़ोन"
+
+msgid "Clinic Timing"
+msgstr "क्लिनिक समय"
+
+msgid "Clinic Address"
+msgstr "क्लिनिक पता"
+
+msgid "WhatsApp Number (with country code, digits only)"
+msgstr "WhatsApp नंबर (देश कोड सहित, केवल अंक)"
+
+msgid "Used for the appointment confirmation button."
+msgstr "अपॉइंटमेंट पुष्टि बटन के लिए उपयोग होता है।"
+
+msgid "Hero Headline"
+msgstr "हीरो शीर्षक"
+
+msgid "Hero Subtext"
+msgstr "हीरो उप-पाठ"
+
+msgid "Primary Color"
+msgstr "मुख्य रंग"
+
+msgid "Mon–Sat: 10 AM – 8 PM"
+msgstr "सोम–शनि: सुबह 10 – रात 8"
+
+msgid "Verified"
+msgstr "सत्यापित"
+
+msgid "Votes"
+msgstr "वोट"
+
+msgid "Feedback"
+msgstr "फीडबैक"
+
+msgid "Results for \"%s\""
+msgstr "\"%s\" के परिणाम"
+
+msgid "Rated %s out of 5"
+msgstr "5 में से %s रेटिंग"
+
+msgid "Namaste! Appointment %1$s confirm karna hai — Dr. %2$s, %3$s ko %4$s baje. Patient: %5$s"
+msgstr "नमस्ते! अपॉइंटमेंट %1$s कन्फर्म करना है — डॉ. %2$s, %3$s को %4$s बजे। मरीज़: %5$s"
+
+msgid "%d Doctor"
+msgid_plural "%d Doctors"
+msgstr[0] "%d डॉक्टर"
+msgstr[1] "%d डॉक्टर"
+
+msgid "%d Review"
+msgid_plural "%d Reviews"
+msgstr[0] "%d समीक्षा"
+msgstr[1] "%d समीक्षाएं"
+
+msgid "About \"%s\""
+msgstr "\"%s\" के बारे में"
+
+msgid "%s is available at %s. Book a slot to consult."
+msgstr "%s, %s पर उपलब्ध है। परामर्श के लिए स्लॉट बुक करें।"
