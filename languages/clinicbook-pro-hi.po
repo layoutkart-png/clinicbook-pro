@@ -618,3 +618,105 @@ msgstr "\"%s\" के बारे में"
 
 msgid "%s is available at %s. Book a slot to consult."
 msgstr "%s, %s पर उपलब्ध है। परामर्श के लिए स्लॉट बुक करें।"
+
+msgid "Generic Name"
+msgstr "जेनेरिक नाम"
+
+msgid "Company / Manufacturer"
+msgstr "कंपनी / निर्माता"
+
+msgid "Form (Tablet, Syrup, Capsule…)"
+msgstr "रूप (टैबलेट, सिरप, कैप्सूल…)"
+
+msgid "Strength (e.g. 500mg)"
+msgstr "क्षमता (जैसे 500mg)"
+
+msgid "Pack Size (e.g. 15 tablets)"
+msgstr "पैक साइज़ (जैसे 15 टैबलेट)"
+
+msgid "Medicine Details"
+msgstr "दवाई का विवरण"
+
+msgid "Prescription required (Rx)"
+msgstr "प्रिस्क्रिप्शन आवश्यक (Rx)"
+
+msgid "Prescription required"
+msgstr "प्रिस्क्रिप्शन आवश्यक"
+
+msgid "Order on WhatsApp"
+msgstr "WhatsApp पर ऑर्डर करें"
+
+msgid "Medicine Facts"
+msgstr "दवाई की जानकारी"
+
+msgid "Company"
+msgstr "कंपनी"
+
+msgid "Form"
+msgstr "रूप"
+
+msgid "Strength"
+msgstr "क्षमता"
+
+msgid "Pack Size"
+msgstr "पैक साइज़"
+
+msgid "Take medicines only as directed by your doctor."
+msgstr "दवाइयाँ केवल अपने डॉक्टर के निर्देशानुसार लें।"
+
+msgid "Namaste! I want to order this medicine: %1$s (%2$s). Please confirm availability."
+msgstr "नमस्ते! मैं यह दवाई ऑर्डर करना चाहता हूँ: %1$s (%2$s)। कृपया उपलब्धता की पुष्टि करें।"
+
+msgid "Fever"
+msgstr "बुखार"
+
+msgid "Cold"
+msgstr "सर्दी-जुकाम"
+
+msgid "Pain"
+msgstr "दर्द"
+
+msgid "Acidity"
+msgstr "एसिडिटी"
+
+msgid "Diabetes"
+msgstr "मधुमेह"
+
+msgid "BP"
+msgstr "बीपी"
+
+msgid "Vitamins"
+msgstr "विटामिन"
+
+msgid "Baby Care"
+msgstr "बच्चों की देखभाल"
+
+msgid "Search medicines by name…"
+msgstr "नाम से दवाई खोजें…"
+
+msgid "Pharmacy WhatsApp Number (digits only)"
+msgstr "फार्मेसी WhatsApp नंबर (केवल अंक)"
+
+msgid "Used for medicine ordering buttons. Leave empty to reuse the clinic WhatsApp number."
+msgstr "दवाई ऑर्डर बटन के लिए। खाली छोड़ें तो क्लिनिक का WhatsApp नंबर इस्तेमाल होगा।"
+
+msgid "Prescription (Rx) Info Text"
+msgstr "प्रिस्क्रिप्शन (Rx) जानकारी"
+
+msgid "This is a prescription medicine. Please share a valid prescription on WhatsApp while ordering."
+msgstr "यह प्रिस्क्रिप्शन वाली दवाई है। ऑर्डर करते समय WhatsApp पर वैध प्रिस्क्रिप्शन भेजें।"
+
+msgid "Shown under the WhatsApp order button on prescription products."
+msgstr "प्रिस्क्रिप्शन उत्पादों पर WhatsApp बटन के नीचे दिखेगा।"
+
+msgid "Order Medicines Online"
+msgstr "ऑनलाइन दवाइयाँ ऑर्डर करें"
+
+msgid "Genuine medicines, vitamins & healthcare products delivered to your doorstep. Upload your prescription on WhatsApp."
+msgstr "असली दवाइयाँ, विटामिन और हेल्थकेयर उत्पाद घर बैठे पाएं। अपना प्रिस्क्रिप्शन WhatsApp पर भेजें।"
+
+msgid "Send Prescription on WhatsApp"
+msgstr "WhatsApp पर प्रिस्क्रिप्शन भेजें"
+
+msgid "Namaste! I want to order medicines with my prescription. Please share the upload link."
+msgstr "नमस्ते! मैं प्रिस्क्रिप्शन के साथ दवाइयाँ ऑर्डर करना चाहता हूँ। कृपया अपलोड लिंक भेजें।"

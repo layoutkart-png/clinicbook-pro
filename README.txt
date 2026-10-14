@@ -82,3 +82,43 @@ verified by round-trip read). To use Hindi: install a multilingual plugin
 == Changelog ==
 
 1.0.0 — Initial release.
+
+------------------------------------------------------------
+PHARMACY / MEDICAL STORE FEATURES (v1.1.0)
+------------------------------------------------------------
+The theme now includes full online-pharmacy support (requires the free
+WooCommerce plugin):
+
+1. WooCommerce support is declared in functions.php (product gallery
+   zoom, lightbox and slider included).
+
+2. MEDICINE META FIELDS — edit any WooCommerce product and fill the
+   "Medicine Details" box:
+   - Generic Name, Company / Manufacturer, Form (Tablet/Syrup…),
+     Strength (e.g. 500mg), Pack Size (e.g. 15 tablets)
+   - "Prescription required (Rx)" checkbox
+
+3. RX BADGE — a red "Rx" mark appears automatically on prescription
+   products in the shop loop and on single product pages.
+
+4. MEDICINE FACTS CARD — on the single product page, a facts table
+   shows Generic Name, Company, Form, Strength and Pack Size, plus a
+   medical disclaimer note.
+
+5. WHATSAPP ORDERING — an "Order on WhatsApp" button appears on
+   single product pages. It uses the number from Customizer → Clinic
+   Settings → "Pharmacy WhatsApp Number" (falls back to the clinic
+   WhatsApp number). The prefilled message includes the product name
+   and price. On Rx products the custom "Prescription (Rx) Info Text"
+   is shown under the button.
+
+6. SHORTCODE [clinicbook_medicine_search] — medicine search bar with
+   symptom chips (Fever, Cold, Pain, Acidity, Diabetes, BP, Vitamins,
+   Baby Care) that filter the shop. Used on the homepage pharmacy band.
+
+7. HOMEPAGE PHARMACY BAND — "Order Medicines Online" section after
+   Featured Doctors: headline, symptom-chip search and a "Send
+   Prescription on WhatsApp" button.
+
+All pharmacy strings are translatable ('clinicbook-pro' domain) and
+Hindi translations ship in languages/clinicbook-pro-hi.mo.

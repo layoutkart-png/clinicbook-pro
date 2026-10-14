@@ -116,6 +116,26 @@ get_header();
 	</div>
 </section>
 
+<!-- ORDER MEDICINES ONLINE -->
+<section class="section">
+	<div class="container">
+		<div class="cbp-pharma-band">
+			<h2><?php esc_html_e( 'Order Medicines Online', 'clinicbook-pro' ); ?></h2>
+			<p><?php esc_html_e( 'Genuine medicines, vitamins & healthcare products delivered to your doorstep. Upload your prescription on WhatsApp.', 'clinicbook-pro' ); ?></p>
+			<?php echo do_shortcode( '[clinicbook_medicine_search]' ); ?>
+			<?php
+			$wa = cbp_pharmacy_whatsapp();
+			if ( $wa !== '' ) :
+				$rx_msg = __( 'Namaste! I want to order medicines with my prescription. Please share the upload link.', 'clinicbook-pro' );
+			?>
+				<a class="cbp-wa-order" href="<?php echo esc_url( 'https://wa.me/' . $wa . '?text=' . rawurlencode( $rx_msg ) ); ?>" target="_blank" rel="noopener">
+					<?php esc_html_e( 'Send Prescription on WhatsApp', 'clinicbook-pro' ); ?>
+				</a>
+			<?php endif; ?>
+		</div>
+	</div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="section section-alt">
 	<div class="container">

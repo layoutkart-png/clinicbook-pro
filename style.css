@@ -276,3 +276,37 @@ a:hover{color:#0b6fd0}
   .foot-grid{grid-template-columns:1fr}
   .topbar .container{justify-content:center}
 }
+
+/* ============ PHARMACY / MEDICAL STORE ============ */
+.cbp-rx-badge{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;padding:0 8px;border-radius:8px;background:#dc2626;color:#fff;font-weight:800;font-size:14px;letter-spacing:.5px;box-shadow:0 2px 8px rgba(220,38,38,.35);vertical-align:middle}
+.woocommerce ul.products li.product .cbp-rx-badge{position:absolute;top:10px;left:10px;z-index:2}
+.woocommerce ul.products li.product{position:relative}
+.cbp-facts-card{background:var(--cbp-card);border:1px solid var(--cbp-line);border-radius:14px;padding:20px 22px;margin:22px 0;box-shadow:0 4px 18px rgba(14,138,253,.07)}
+.cbp-facts-card h4{margin:0 0 12px;font-size:17px;color:var(--cbp-navy);display:flex;align-items:center;gap:10px}
+.cbp-facts-card table{width:100%;border-collapse:collapse;font-size:14px}
+.cbp-facts-card th{text-align:left;color:var(--cbp-muted);font-weight:600;padding:7px 10px 7px 0;width:38%;vertical-align:top}
+.cbp-facts-card td{padding:7px 0;color:var(--cbp-ink);font-weight:500}
+.cbp-facts-card tr+tr th,.cbp-facts-card tr+tr td{border-top:1px dashed var(--cbp-line)}
+.cbp-facts-note{margin:12px 0 0;font-size:12.5px;color:var(--cbp-muted)}
+.cbp-wa-order{display:inline-flex;align-items:center;gap:10px;background:#22c55e;color:#fff!important;font-weight:700;font-size:15px;padding:13px 26px;border-radius:999px;text-decoration:none!important;margin-top:14px;box-shadow:0 6px 18px rgba(34,197,94,.35);transition:transform .15s}
+.cbp-wa-order:hover{transform:translateY(-2px);color:#fff!important}
+.cbp-rx-note{font-size:13px;color:#b91c1c;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:10px 14px;margin-top:12px}
+.cbp-med-search{max-width:640px;margin:0 auto}
+.cbp-med-search form{display:flex;gap:10px;margin-bottom:16px}
+.cbp-med-search input[type=search]{flex:1;border:2px solid var(--cbp-line);border-radius:999px;padding:13px 22px;font-size:15px;outline:none;background:#fff}
+.cbp-med-search input[type=search]:focus{border-color:var(--cbp-blue)}
+.cbp-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.cbp-chip{display:inline-block;padding:9px 20px;border-radius:999px;background:#fff;border:1.5px solid var(--cbp-line);color:var(--cbp-navy);font-size:14px;font-weight:600;text-decoration:none;transition:all .15s}
+.cbp-chip:hover{border-color:var(--cbp-teal);background:linear-gradient(135deg,var(--cbp-blue),var(--cbp-teal));color:#fff}
+.cbp-pharma-band{background:linear-gradient(120deg,#0b5ed7 0%,#0E8AFD 45%,#0DCEA9 100%);border-radius:22px;padding:46px 40px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.cbp-pharma-band:before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.08);top:-120px;right:-80px}
+.cbp-pharma-band h2{color:#fff;margin:0 0 10px;font-size:32px}
+.cbp-pharma-band p{color:rgba(255,255,255,.92);margin:0 auto 22px;max-width:560px}
+.cbp-pharma-band .cbp-med-search input[type=search]{border:none}
+.cbp-pharma-band .cbp-chip{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff}
+.cbp-pharma-band .cbp-wa-order{margin-top:20px}
+@media(max-width:720px){
+  .cbp-pharma-band{padding:34px 22px}
+  .cbp-pharma-band h2{font-size:24px}
+  .cbp-med-search form{flex-direction:column}
+}

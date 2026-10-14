@@ -50,6 +50,18 @@ function cbp_customize_register( $wp_customize ) {
 			'default' => '#0E8AFD',
 			'type'    => 'color',
 		),
+		'cbp_pharmacy_whatsapp' => array(
+			'label'       => __( 'Pharmacy WhatsApp Number (digits only)', 'clinicbook-pro' ),
+			'default'     => '',
+			'type'        => 'text',
+			'description' => __( 'Used for medicine ordering buttons. Leave empty to reuse the clinic WhatsApp number.', 'clinicbook-pro' ),
+		),
+		'cbp_rx_info' => array(
+			'label'       => __( 'Prescription (Rx) Info Text', 'clinicbook-pro' ),
+			'default'     => __( 'This is a prescription medicine. Please share a valid prescription on WhatsApp while ordering.', 'clinicbook-pro' ),
+			'type'        => 'textarea',
+			'description' => __( 'Shown under the WhatsApp order button on prescription products.', 'clinicbook-pro' ),
+		),
 	);
 
 	foreach ( $settings as $id => $args ) {

@@ -14,6 +14,7 @@ define( 'CBP_URI', get_template_directory_uri() );
 require_once CBP_DIR . '/inc/booking.php';
 require_once CBP_DIR . '/inc/shortcodes.php';
 require_once CBP_DIR . '/inc/customizer.php';
+require_once CBP_DIR . '/inc/pharmacy.php';
 
 /* ---------- text domain ---------- */
 function cbp_load_textdomain() {
@@ -28,6 +29,10 @@ function cbp_setup() {
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'clinicbook-pro' ),
 		'footer'  => __( 'Footer Menu', 'clinicbook-pro' ),
